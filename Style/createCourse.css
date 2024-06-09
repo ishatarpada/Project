@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.line {
+    -ms-flex: 1 0 32px;
+    flex: 1 0 32px;
+    min-width: 1px;
+    min-height: 1px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, .12);
+}
+
+.btn-round.btn-lg,
+.btn-group-lg>.btn-round.btn {
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
+}
+
+.btn-white-shadow {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    -webkit-box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.4);
+    background-color: #fff;
+}

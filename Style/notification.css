@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-check-input{
+    height: 35px !important;
+    width: 70px !important;
+}
+
+
+.form-check-input:checked {
+    background-color: #3DCBB1;
+    border-color: #3DCBB1;
+}
+
+.show-notification{
+    display: none;
+}

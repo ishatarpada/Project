@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.webinar-section .webinar-part-1 .webinar-progress {
+    height: 550px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.webinar-section .webinar-part-1 .webinar-progress .title p{
+    font-size: 20px;
+}
+
+.webinar-section .webinar-part-1 .webinar-progress .title span{
+    font-size: 16px;
+}
+
+
+.webinar-section .webinar-part-1 .webinar-progress .follow p{
+    color: #3DCBB1;
+}
+
+.webinar-section .webinar-part-1 .webinar-progress .webinar-progress-title{
+    height: 120px;
+}
+
+.webinar-section .webinar-part-1 .webinar-progress .progress-list{
+    height: 380px;
+    overflow-y: auto;
+}
+
+.webinar-section .webinar-part-1 .webinar-progress .progress-list::-webkit-scrollbar{
+    width: 0;
+}
+
+.webinar-section .webinar-part-1 .webinar-progress .progress-list li{
+    font-size: 18px;
+}

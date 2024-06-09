@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.webinar-section .webinar-part-1 .webinar-charge {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.webinar-section .webinar-part-1 .webinar-info .video-off {
+    width: 70%;
+    background-color: #A04AE3;
+}
+
+.webinar-section .webinar-part-1 .webinar-info .buy-btn {
+    background-color: #3DCBB1;
+}

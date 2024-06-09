@@ -1,0 +1,13 @@
+/* footer */
+
+footer{
+    background-color:  #1B1B1B;
+}
+
+footer .footer-content .footer-list li{
+    list-style: none;
+}
+
+footer .copyright-section{
+    color: #F9F9F999;
+}

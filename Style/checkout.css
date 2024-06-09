@@ -1,0 +1,35 @@
+.payment-container{
+    box-shadow: #00000029 0px 10px 36px 0px, #0000000f 0px 0px 0px 1px;
+}
+
+
+.payment-container .add-btn {
+    color: #3DCBB1;
+    background-color: #3DCBB11a;
+}
+
+.payment-container .add-btn:hover {
+    background-color: #3DCBB1;
+    color: #fff;
+}
+
+.payment-container img {
+    height: 40px;
+    width: 40px;
+}
+
+.payment-container .accordion-item{
+    box-shadow: #00000029 0px 10px 36px 0px, #0000000f 0px 0px 0px 1px;
+}
+
+.processed-container{
+    box-shadow: #00000029 0px 10px 36px 0px, #0000000f 0px 0px 0px 1px;
+}
+
+.processed-container .processedBtn{
+    background-color: #3DCBB1;
+}
+
+.checkout-container .processed-container .panel .loader {
+    display: none !important;
+}

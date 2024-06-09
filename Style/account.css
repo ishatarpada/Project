@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --aqua: #3DCBB1;
+    --bg-dark: #050505a1;
+    --danger: #dc3545
+}
+
+.account-container {
+    width: 90%;
+    margin: auto;
+    color: #15739867;
+}
+
+.account-tabMenu {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.account-tabMenu ul {
+    overflow-x: auto;
+}
+
+.account-tabMenu ul::-webkit-scrollbar {
+    width: 0;
+}
+
+.account-tabMenu ul li {
+    white-space: nowrap;
+}
+
+.account-tabMenu ul li:hover {
+    color: #3DCBB1 !important;
+    border-bottom: 2px solid #3DCBB1 !important;
+}
+
+.account-container .fill-details-section {
+    width: 80%;
+    margin: auto;
+}
+
+.account-container .fill-details-section .user-img {
+    width: 80px;
+    height: 80px;
+    margin-left: 43%;
+    margin-right: 45%;
+}
+
+.account-container .fill-details-section .user-img .camera-icon {
+    background-color: var(--bg-dark);
+}
+
+.account-container .fill-details-section .save-btn {
+    background-color: var(--aqua);
+}
+
+.model-section {
+    width: 100% !important;
+    margin: 5% auto;
+}
+
+.model-section .explore-section {
+    box-shadow: #00000029 0px 10px 36px 0px, #0000000f 0px 0px 0px 1px;
+}
+
+.model-section .explore-img {
+    height: 250px;
+    width: 250px;
+}
+
+.model-section .explore-img .check-icon a {
+    color: var(--bg-aqua);
+}
+
+.model-section .explore-img .check-icon {
+    display: none;
+}
+
+.model-section #okBtn {
+    background-color: var(--bg-aqua);
+}
+
+.payment-container .add-btn {
+    color: #3DCBB1;
+    background-color: #3DCBB11a;
+}
+
+.payment-container .add-btn:hover {
+    background-color: #3DCBB1;
+    color: #fff;
+}
+
+.payment-container img {
+    height: 40px;
+    width: 40px;
+}
+
+@media (min-width :481px) and (max-width : 768px) {
+    .account-container {
+        width: 100%;
+        margin: 0% !important;
+    }
+
+    .account-container .account {
+        display: none;
+    }
+
+    .account-container .fill-details-section {
+        width: 100% !important;
+        margin: 0% !important;
+    }
+
+    .account-container .fill-details-section .save-btn {
+        background-color: var(--danger) !important;
+    }
+
+    .account-container .notification-box{
+        margin-top: 0% !important;
+    }
+
+    .account-container .notification-box .notification-setting{
+        margin: 5px auto !important;
+    }
+
+    .account-container .notification-box .notification-title{
+        font-size: 1rem !important;
+        font-weight: 500;
+    }
+
+    .account-container .notification-box .show-notification .p{
+        font-size: 16px !important;
+        font-weight: 500;
+    }
+}
+
+@media (min-width :319px) and (max-width : 480px) {
+    .account-container {
+        width: 100%;
+        margin: 0% !important;
+    }
+
+    .account-container .account {
+        display: none;
+    }
+
+    .account-container .fill-details-section {
+        width: 100% !important;
+        margin: 0% !important;
+    }
+
+    .account-container .fill-details-section .save-btn {
+        background-color: var(--danger) !important;
+    }
+
+    .account-container .notification-box{
+        margin-top: 0% !important;
+    }    
+
+    .account-container .notification-box .notification-title{
+        font-size: 1.2rem !important;
+        font-weight: 500;
+    }
+
+    .account-container .notification-box .show-notification .p{
+        font-size: 16px !important;
+        font-weight: 500;
+    }
+
+    .account-container .notification-box .show-notification .notification{
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+    }
+
+    .account-container .notification-box .show-notification .notification .notification-img span{
+        font-size: 0.8rem !important;
+    }
+}
