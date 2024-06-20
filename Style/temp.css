@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.offline-video-container {
+  width: 98%;
+  margin: auto;
+}
+
+.offline-video-container .offline-course-details {
+  height: 700px;
+}
+
+.offline-video-container .offline-course-details .offline-course-part1 {
+  height: 700px;
+}
+
+.offline-video-container .offline-course-details .offline-course-part2 {
+  height: 700px;
+}
+
+.offline-video-container .offline-course-details .offline-course-part2 .progress-info {
+  height: 80px;
+}
+
+.offline-video-container .offline-course-details .offline-course-part2 .course-list-details {
+  height: 610px;
+  overflow-y: auto;
+}
+
+.offline-video-container .offline-course-details .offline-course-part2 .course-list-details::-webkit-scrollbar {
+  width: 0;
+}
+
+@media (min-width :990px) and (max-width : 1024px) {
+
+  .offline-video-container .offline-course-video {
+    height: 600px;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part1 {
+    height: 600px;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part2 {
+    display: 600px !important;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part2 .progress-info {
+    height: 80px;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part2 .course-list-details {
+    height: 510px;
+  }
+
+}
+
+@media (min-width :768px) and (max-width : 970px) {
+
+  .offline-video-container .offline-course-video {
+    height: 500px;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part1 {
+    height: 500px;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part1  iframe{
+    height: 500px;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part2 {
+    display: none !important;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part2 .course-list-details {
+    height: 280px;
+  }
+
+  .offline-video-container .offline-course-details .blocker-course-part {
+    display: none;
+  }
+
+  .offline-video-container .course-modules .about-promo {
+    display: none !important;
+  }
+}
+
+@media (min-width :320px) and (max-width : 768px) {
+  .header-container {
+    display: none !important;
+  }
+
+  .offline-video-container .offline-course-video {
+    height: 300px;
+    margin: 0 !important;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part1 {
+    height: 300px;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part1  iframe{
+    height: 300px;
+  }
+
+  .offline-video-container .offline-course-details .offline-course-part2 {
+    display: none;
+  }
+}

@@ -30,7 +30,7 @@ body {
     width: 100%;
     overflow: hidden;
     transition: all 0.35s ease-in-out;
-    background-color: #fff;
+    background-color: #37b526;
     min-width: 0;
     color: rgba(58, 152, 144, 0.637);
 }

@@ -384,6 +384,8 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                                 </li>
                                 <li><a class="dropdown-item" href="notification.php"><i class="bi bi-bell fa-fw me-4"></i>notification</a>
                                 </li>
+                                <li><a class="dropdown-item" href="Pricing.php"><i class="bi bi-wallet-fill fa-fw me-4"></i>Pricing</a>
+                                </li>
                                 <li><a class="dropdown-item" href="help.php"><i class="bi bi-info-circle fa-fw me-4"></i>Help</a>
                                 </li>
                                 <li>

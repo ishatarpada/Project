@@ -17,6 +17,9 @@
     height: 700px;
 }
 
+.offline-video-container .offline-course-details{
+    height: 700px;
+}
 
 .offline-video-container .offline-course-details .offline-course-part1 {
     height: 700px;
@@ -195,7 +198,7 @@
 @media (min-width :769px) and (max-width : 1024px) {
     
     .offline-video-container .offline-course-video {
-        height: 450px;
+        height: 900px;
     }
 
     .offline-video-container .offline-course-details .offline-course-part1 {
@@ -203,7 +206,8 @@
     }
 
     .offline-video-container .offline-course-details .offline-course-part2 {
-        height: 450px;
+        /* height: 450px; */
+        display: none;
     }
 
     .offline-video-container .offline-course-details .offline-course-part2 .course-list-details {

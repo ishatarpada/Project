@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Videos</title>
+    <title>course Videos</title>
 
     <!-- css bootstrap link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="Style/style.css">
 
     <!-- unpaid-offline video css style link -->
-    <link rel="stylesheet" href="Style/unpaid-offline.css">
+    <link rel="stylesheet" href="Style/course_video.css">
 
     <!-- header css file -->
     <link rel="stylesheet" href="Style/header.css">
@@ -73,16 +73,18 @@
                 echo "<p>Error: Invalid YouTube URL for topic: $topic_name</p>";
             }
     ?>
+            <!-- offline unpaid video section -->
             <div class="offline-video-container my-2">
                 <div class="row offline-course-details my-3 mx-auto w-100">
-                    <div class="col-lg-8 offline-course-part1 mx-auto rounded p-0 border">
-                        <div class="offline-course-video position-relative w-100 rounded">
-                            <iframe id="main-video" width="100%" height="700" src="<?php echo $embed_url; ?>" frameborder="0" allowfullscreen class="rounded"></iframe>
+                    <div class="col-lg-7 offline-course-part1 mx-auto rounded p-0">
+                        <div class="offline-course-video position-relative w-100">
+                            <div class="offline-course-video position-relative w-100 rounded">
+                                <iframe id="main-video" width="100%" height="700" src="<?php echo $embed_url; ?>" frameborder="0" allowfullscreen class="rounded"></iframe>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 offline-course-part2 mx-auto px-2 shadow-none">
-                        <div class="offline-course-progress card p-0 m-0">
+                    <div class="col-lg-5 offline-course-part2 mx-auto p-2">
+                        <div class="offline-course-progress">
                             <div class="progress-info ps-3 p-0 card-header">
                                 <div class="progress-chapter m-0">
                                     <p class="fw-bold fs-4 m-0"><?php echo $course_title; ?> Full Course</p>
@@ -138,18 +140,19 @@
                                                             } else {
                                                                 // Display the subtopic details
                                                         ?>
-                                                                <div class="course-list-1 my-0 row gap-2">
-                                                                    <div class="col-md-9 m-auto p-0 d-flex justify-content-start align-items-center flex-wrap">
+                                                                <div class="course-list-1 my-0 d-flex justify-content-between align-items-center flex-wrap">
+                                                                    <div class="m-0 p-0 d-flex justify-content-start align-items-center flex-wrap w-75">
                                                                         <iframe width="140" height="70" src="<?php echo $embed_link; ?>" frameborder="0" allowfullscreen class="rounded me-3"></iframe>
                                                                         <div>
                                                                             <p class="m-0 text-dark fw-bolder"><?php echo $topic_name; ?></p>
                                                                             <p class="m-0 text-dark fw-medium"><?php echo $channel_name ?></p>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-2 m-auto">
-                                                                        <a href="#" class="bi bi-download rounded-circle text-danger bg-danger bg-opacity-10 p-2 fs-3"></a>
+                                                                    <div class="d-flex justify-content-end align-items-center m-auto w-25">
+                                                                        <a href="#" class="bi bi-download rounded-circle text-danger bg-danger bg-opacity-10 p-2 fs-5"></a>
                                                                     </div>
                                                                 </div>
+
                                                                 <!-- Divider -->
                                                                 <hr>
                                                         <?php
@@ -201,10 +204,9 @@
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab" tabindex="0">
+                            <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab" tabindex="0">
                                 <div class="about-course-description my-3 px-5 py-2">
                                     <?php
-
                                     $course_ID = $_GET['id'];
                                     // Include database connection
                                     include 'config.php';
@@ -220,11 +222,22 @@
                                             <!-- course details -->
                                             <div class="card bg-light border rounded-3 my-3 container">
 
-                                                <!-- Catd header -->
+                                                <!-- Card header -->
                                                 <div class="card-header bg-light border-bottom d-flex justify-content-between flex-wrap align-items-center">
                                                     <h5 class="card-header-title fs-4 fw-semibold m-0 p-1">The Complete <?php echo $row["course_title"]; ?> Course
                                                     </h5>
-                                                    <button class="btn btn-lg bg-success bg-opacity-10"><a href="certificate.php?id=<?php echo $row['course_ID'] ?>" class="text-success text-decoration-none">Generate Certificate</a></button>
+                                                    <?php
+                                                    // Assuming $row['status'] contains the status of the course, e.g., 'complete' or 'incomplete'
+                                                    $courseStatus = $row['status'];
+                                                    // Check if the course status is 'complete'
+                                                    if ($courseStatus === 'complete') {
+                                                        // Display the button for generating the certificate
+                                                        echo '<button class="btn btn-lg bg-success bg-opacity-10"><a href="course-certificate.php?id=' . $row['course_ID'] . '" class="text-success text-decoration-none">Generate Certificate</a></button>';
+                                                    } else {
+                                                        // Course is not complete, so disable the button
+                                                        echo '<button class="btn btn-lg bg-success bg-opacity-10 disabled" disabled>Generate Certificate</button>';
+                                                    }
+                                                    ?>
                                                 </div>
 
                                                 <!-- Card body START -->
@@ -237,7 +250,7 @@
                                                         <div class="col-md-6">
 
                                                             <div class="d-flex justify-content-center align-items-center">
-                                                                <img src='<?php echo $row['course_img']; ?>' class="rounded" alt="" style="height:300px; width:450px;">
+                                                                <img src='<?php echo $row['course_img']; ?>' class="rounded" alt="" style="height:200px; width:300px;">
                                                             </div>
 
                                                             <p class="my-3 fw-medium text-secondary" style="font-size:18px;"><?php echo $row["course_description"]; ?>
@@ -289,9 +302,12 @@
                                                 </div>
                                                 <!-- Card body END -->
                                             </div>
-                                    <?php }
-                                    } ?>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
                                 </div>
+
                             </div>
                             <div class="tab-pane fade container px-2" id="nav-course" role="tabpanel" aria-labelledby="nav-course-tab" tabindex="0">
                                 <div class="accordion accordion-flush about-course-list shadow-none border" id="subtopicsAccordion">
@@ -341,16 +357,16 @@
                                                                 } else {
                                                                     // Display the subtopic details
                                                             ?>
-                                                                    <div class="course-list-1 my-0 row gap-2">
-                                                                        <div class="col-md-9 m-auto p-0 d-flex justify-content-start align-items-center flex-wrap">
+                                                                    <div class="course-list-1 my-0 d-flex justify-content-between align-items-center flex-wrap">
+                                                                        <div class="m-0 p-0 d-flex justify-content-start align-items-center flex-wrap w-75">
                                                                             <iframe width="140" height="70" src="<?php echo $embed_link; ?>" frameborder="0" allowfullscreen class="rounded me-3"></iframe>
                                                                             <div>
                                                                                 <p class="m-0 text-dark fw-bolder"><?php echo $topic_name; ?></p>
                                                                                 <p class="m-0 text-dark fw-medium"><?php echo $channel_name ?></p>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-md-2 m-auto">
-                                                                            <a href="#" class="bi bi-download rounded-circle text-danger bg-danger bg-opacity-10 p-2 fs-3"></a>
+                                                                        <div class="d-flex justify-content-end align-items-center m-auto w-25">
+                                                                            <a href="#" class="bi bi-download rounded-circle text-danger bg-danger bg-opacity-10 p-2 fs-5"></a>
                                                                         </div>
                                                                     </div>
                                                                     <!-- Divider -->
@@ -419,6 +435,8 @@
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
 
                     <div class="col-lg-3 about-promo d-flex justify-content-center align-items-start">
@@ -428,9 +446,9 @@
                     </div>
                 </div>
             </div>
+
     <?php }
     } ?>
-
 
     <!-- join us section -->
     <?php
@@ -444,28 +462,7 @@
 
 
     <!-- js external link -->
-    <script src="Script/main.js"></script>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all video link elements
-            var videoLinks = document.querySelectorAll('.video-link');
-            // Get the main video iframe
-            var mainVideo = document.getElementById('main-video');
-
-            // Add click event listener to each video link
-            videoLinks.forEach(function(link) {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent default anchor click behavior
-                    // Get the video link from the data attribute
-                    var videoLink = this.getAttribute('data-video-link');
-                    // Update the src attribute of the main video iframe
-                    mainVideo.src = videoLink;
-                });
-            });
-        });
-    </script>
+    <!-- <script src="Script/main.js"></script> -->
 
     <!-- js bootstrap link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

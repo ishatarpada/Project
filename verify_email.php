@@ -95,6 +95,45 @@ session_start();
     </script>';
     }
 
+    if (isset($_GET['code']) && isset($_GET['email'])) {
+        $verificationCode = $_GET['code'];
+        $email = $_GET['email'];
+
+        // Verify email
+        $sql = "UPDATE team_registration SET email_verified = 1 WHERE work_email = '$email' AND verification_code = '$verificationCode'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            echo '<script>
+            Swal.fire({
+                title: "Good job!",
+                text: "Email verified successfully.",
+                icon: "success"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "Subscription.php";
+                }
+            });
+        </script>';
+        } else {
+            echo '<script>
+            Swal.fire({
+                title: "Oops!",
+                text: "Verification failed. Please try again.",
+                icon: "error"
+            });
+        </script>';
+        }
+    } else {
+        echo '<script>
+        Swal.fire({
+            title: "Oops!",
+            text: "Invalid verification link.",
+            icon: "error"
+        });
+    </script>';
+    }
+
     mysqli_close($conn);
 
     ?>
