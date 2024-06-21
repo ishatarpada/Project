@@ -221,7 +221,7 @@
         p3.value = '1'; // Duration is 1
         t3.value = 'M'; // Unit is month
       } else if (select.value === 'yearly') {
-        a3.value = '10200'; // Yearly price
+        a3.value = '850'; // Yearly price
         p3.value = '1'; // Duration is 1
         t3.value = 'Y'; // Unit is year
       } else if (select.value === 'team') {
