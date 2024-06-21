@@ -36,7 +36,7 @@
     <div class="container">
       <section class="welcome-section row justify-content-center align-items-center">
         <div class="welcome-image-section col-md-5 col-sm-12">
-          <img class="welcome-image img-fluid" src="Assests/Instructor-1.png" alt="Greg Brown headshot" style="height: 400px; width:2000px;">
+          <img class="welcome-image img-fluid" src="https://about.udemy.com/wp-content/uploads/2024/02/brown-ceoheadshot-2024.png" alt="Greg Brown headshot" style="height: 400px; width:2000px;">
         </div>
         <div class="welcome-text-section mx-5  col-md-6 col-sm-12">
           <div class="welcome-subhead text-4xl mb-3 font-bold font-serif">Welcome from myCourse.io, CEO</div>
@@ -59,37 +59,37 @@
     </div>
   </div>
 
-  <div class="awards-bg my-5 bg-green-50">
+  <div class="awards-bg my-5 bg-green-50 p-5">
     <div class="container">
       <section class="awards-section">
         <div class="awards-copy-section">
           <div class="awards_heading text-center pt-5 font-serif text-3xl font-bold">We’re humbled to be recognized for our efforts worldwide</div>
         </div>
         <div class="awards-image-section my-5 d-flex justify-content-center align-items-center flex-wrap">
-          <div class="awards-image m-3 h-48 w-48">
+          <div class="awards-image m-3 h-36 w-36">
             <img src="https://about.udemy.com/wp-content/uploads/2024/02/2024BPTW_GeneralBadgeYear_FullColor.png" alt="Builtin 2024 Best Places to Work Award">
           </div>
-          <div class="awards-image m-3 h-48 w-48">
+          <div class="awards-image m-3 h-36 w-36">
             <img src="https://about.udemy.com/wp-content/uploads/2022/11/Best-Workplaces-1.png" alt="We Support UN Global Compact">
           </div>
-          <div class="awards-image m-3 h-48 w-48">
+          <div class="awards-image m-3 h-36 w-36">
             <img src="https://about.udemy.com/wp-content/uploads/2024/02/Best-Workplaces-greenbrd-2024.png" alt="ESG Industry Top Rated 2024 Award">
           </div>
-          <div class="awards-image m-3 h-48 w-48">
+          <div class="awards-image m-3 h-36 w-36">
             <img src="https://about.udemy.com/wp-content/uploads/2022/03/Best-Workplaces_withspacers-1.png" alt="Fortune Change the World 2020 Award">
           </div>
         </div>
         <div class="awards-image-section my-5 d-flex justify-content-center align-items-center flex-wrap">
-          <div class="awards-image m-3 h-48 w-48">
+          <div class="awards-image m-3 h-36 w-36">
             <img src="https://about.udemy.com/wp-content/uploads/2024/02/bw_parents2022.png" alt="BW Great Place to Work for Parents Award USA 2022">
           </div>
-          <div class="awards-image m-3 h-48 w-48">
+          <div class="awards-image m-3 h-36 w-36">
             <img src="https://about.udemy.com/wp-content/uploads/2024/02/Best-Workplaces-for-Women-22-logo.jpg" alt="BW Great Place to Work for Women Award Ireland 2022">
           </div>
-          <div class="awards-image m-3 h-48 w-48">
+          <div class="awards-image m-3 h-36 w-36">
             <img src="https://about.udemy.com/wp-content/uploads/2024/02/2022-Ireland-Best-Workplaces-in-Tech.jpg" alt="BW Great Place to Work in Tech Award Ireland 2022">
           </div>
-          <div class="awards-image m-3 h-48 w-48">
+          <div class="awards-image m-3 h-36 w-36">
             <img src="https://about.udemy.com/wp-content/uploads/2024/02/bw_ireland2022.png" alt="BW Great Place to Work Award Ireland 2022">
           </div>
         </div>
@@ -97,16 +97,85 @@
     </div>
   </div>
 
-  <div class="opportunities-bg bg-no-repeat my-5 bg-green-50">
+  <div class="opportunities-bg bg-no-repeat my-5 bg-secondary bg-opacity-10 p-5">
     <div class="opportunities-text-section  row justify-content-between align-items-center">
       <div class="col-md-6">
-        <div class="opportunities-heading font-bold text-6xl font-serif md:w-full md:text-5xl text-center">Committed to Creating New Possibilities</div>
+        <div class="opportunities-heading font-bold text-4xl font-serif md:w-full md:text-5xl text-center">Committed to Creating New Possibilities</div>
         <div class="opportunities-copy text-2xl font-semibold font-monospace md:w-full md:text-2xl mt-3 text-center">
           <p>As a mission-driven company, Udemy helps aspiring practitioners learn from experts in their fields. Udemy enables anyone, regardless of academic credentials, to create courses and market them to consumer and enterprise learners. Udemy believes in the power of opening up possibilities by bringing learners and content creators together.</p>
         </div>
       </div>
       <div class="opportunities-img col-md-6">
         <img src="https://about.udemy.com/wp-content/uploads/2022/03/woman-sit2.png" alt="" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg-purple-50 p-5 my-5">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-4">
+        <img src="https://about.udemy.com/wp-content/uploads/2022/03/fr_newgreen.png" alt="" class="img-fluid">
+      </div>
+      <div class="col-md-4">
+        <h1 class="fw-bold font-serif">Udemy Free Resource Center</h1>
+        <p class="fw-medium">We’ve always been passionate about making learning accessible to everyone. Through our Free Resource Center, we offer hundreds of free courses across a variety of topics and languages, helping individuals around the world develop their skills. Over one million learners have enrolled in Udemy Free Resource Center courses.</p>
+        <p class="fw-bold text-purple-500"> Visit the Free Resource Center <i class="bi bi-arrow-right-short"></i></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container my-5">
+    <p class="display-5 font-serif font-bold text-center">Meet Some of Our Impact Partners</p>
+    <p class="text-center fw-medium">At Udemy, we’re humbled by the opportunity to open access to learning — especially for those whose opportunities have historically been limited. To do this, we’ve partnered with a number of nonprofit organizations to support their learning programs. Through our Impact Program, Udemy has supported more than 200 nonprofits globally with discounted licenses and courses helping them further their own mission to transform lives.</p>
+  </div>
+
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="img">
+          <img src="https://about.udemy.com/wp-content/uploads/2021/07/lastmile_ss.jpeg" alt="" class="rounded">
+        </div>
+        <div class="logo">
+          <img src="https://thelastmile.org/wp-content/themes/thelastmile/theme/img/logo.svg" alt="" class="h-24 w-48">
+        </div>
+        <p class="fw-medium"><span class="text-green-500">The Last Mile (TLM)</span> provides resources to incarcerated and formerly incarcerated people to help them thrive in a rapidly evolving job market. Since our partnership began in 2019, over 189 TLM learners have re-entered the workforce after developing coding and workplace skills on Udemy.</p>
+      </div>
+      <div class="col-md-6">
+        <div class="img">
+          <img src="https://about.udemy.com/wp-content/uploads/2021/07/lastmile_ss.jpeg" alt="" class="rounded">
+        </div>
+        <div class="logo">
+          <img src="https://thelastmile.org/wp-content/themes/thelastmile/theme/img/logo.svg" alt="" class="h-24 w-48">
+        </div>
+        <p class="fw-medium"><span class="text-green-500">The Last Mile (TLM)</span> provides resources to incarcerated and formerly incarcerated people to help them thrive in a rapidly evolving job market. Since our partnership began in 2019, over 189 TLM learners have re-entered the workforce after developing coding and workplace skills on Udemy.</p>
+      </div>
+      <div class="col-md-6">
+        <div class="img">
+          <img src="https://about.udemy.com/wp-content/uploads/2021/07/lastmile_ss.jpeg" alt="" class="rounded">
+        </div>
+        <div class="logo">
+          <img src="https://thelastmile.org/wp-content/themes/thelastmile/theme/img/logo.svg" alt="" class="h-24 w-48">
+        </div>
+        <p class="fw-medium"><span class="text-green-500">The Last Mile (TLM)</span> provides resources to incarcerated and formerly incarcerated people to help them thrive in a rapidly evolving job market. Since our partnership began in 2019, over 189 TLM learners have re-entered the workforce after developing coding and workplace skills on Udemy.</p>
+      </div>
+      <div class="col-md-6">
+        <div class="img">
+          <img src="https://about.udemy.com/wp-content/uploads/2021/07/lastmile_ss.jpeg" alt="" class="rounded">
+        </div>
+        <div class="logo">
+          <img src="https://thelastmile.org/wp-content/themes/thelastmile/theme/img/logo.svg" alt="" class="h-24 w-48">
+        </div>
+        <p class="fw-medium"><span class="text-green-500">The Last Mile (TLM)</span> provides resources to incarcerated and formerly incarcerated people to help them thrive in a rapidly evolving job market. Since our partnership began in 2019, over 189 TLM learners have re-entered the workforce after developing coding and workplace skills on Udemy.</p>
+      </div>
+      <div class="col-md-6">
+        <div class="img">
+          <img src="https://about.udemy.com/wp-content/uploads/2021/07/lastmile_ss.jpeg" alt="" class="rounded">
+        </div>
+        <div class="logo">
+          <img src="https://thelastmile.org/wp-content/themes/thelastmile/theme/img/logo.svg" alt="" class="h-24 w-48">
+        </div>
+        <p class="fw-medium"><span class="text-green-500">The Last Mile (TLM)</span> provides resources to incarcerated and formerly incarcerated people to help them thrive in a rapidly evolving job market. Since our partnership began in 2019, over 189 TLM learners have re-entered the workforce after developing coding and workplace skills on Udemy.</p>
       </div>
     </div>
   </div>

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stories</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="style/pages.css">
 </head>
@@ -51,53 +52,44 @@
         <a href="#" data-content="content-learners" class="text-black text-nowrap fw-medium fs-5 text-decoration-none hove:underline mx-3">Learners</a>
         <a href="#" data-content="content-udemy-employees" class="text-black text-nowrap fw-medium fs-5 text-decoration-none hove:underline mx-3">Udemy Employees</a>
       </div>
-      <div class="content">
-
-        <div class="cta-section">
-          <div class="cta__section d-flex overflow-x-scroll overflow-y-hidden">
-            <a class="cta__item-link mx-3 position-relative text-decoration-none" href="https://about.udemy.com/story/simon-ruszala/">
-              <div class="cta__item">
-                <img class="stories-img-radius img-fluid rounded" src="https://about.udemy.com/wp-content/uploads/2024/03/Simon-thumbnail.jpg" alt="Simon R.">
-                <div class="cta-container--top position-absolute top-0 my-2 text-center w-100">
-                  <div class="cta-name fw-bold text-black">Simon R.</div>
-                  <div class="cta-story-blurb  text-center text-black fw-bold">The road to lifelong learning</div>
-                </div>
+      <div class="container mx-auto py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <a href="#" class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img src="https://about.udemy.com/wp-content/uploads/2024/03/Simon-thumbnail.jpg" alt="" class="w-full transition-transform duration-300 transform group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 p-4 text-white">
+                <span class="block text-lg font-semibold">SIMON R.</span>
+                <span class="block mt-1 text-sm">The road to lifelong learning</span>
               </div>
-            </a>
-            <a class="cta__item-link mx-3 position-relative text-decoration-none" href="https://about.udemy.com/story/todd-mccloud/">
-              <div class="cta__item">
-                <img class="stories-img-radius img-fluid rounded" src="https://about.udemy.com/wp-content/uploads/2024/04/Atlassian-thumbnail-V1-2.jpg" alt="Todd M.">
-                <div class="cta-container--top position-absolute top-0 my-2 text-center w-100">
-                  <div class="cta-name fw-bold text-black">Todd M.</div>
-                  <div class="cta-story-blurb text-center text-black fw-bold">Learning's forward momentum</div>
-                </div>
+            </div>
+          </a>
+          <a href="#" class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img src="https://about.udemy.com/wp-content/uploads/2024/04/Atlassian-thumbnail-V1-2.jpg" alt="" class="w-full transition-transform duration-300 transform group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 p-4 text-white">
+                <span class="block text-lg font-semibold">TODD M.</span>
+                <span class="block mt-1 text-sm">Learning’s forward momentum</span>
               </div>
-            </a>
-            <a class="cta__item-link mx-3 position-relative text-decoration-none" href="https://about.udemy.com/story/bryce-johnson/">
-              <div class="cta__item">
-                <img class="stories-img-radius img-fluid rounded" src="https://about.udemy.com/wp-content/uploads/2024/06/Bryce-thumbnail.jpg" alt="Bryce J.">
-                <div class="cta-container--top position-absolute top-0 my-2 text-center w-100">
-                  <div class="cta-name fw-bold text-black">Bryce J.</div>
-                  <div class="cta-story-blurb  text-center text-black fw-bold">From $40K to $170K</div>
-                </div>
+            </div>
+          </a>
+          <a href="#" class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img src="https://about.udemy.com/wp-content/uploads/2024/06/Bryce-thumbnail.jpg" alt="" class="w-full transition-transform duration-300 transform group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 p-4 text-white">
+                <span class="block text-lg font-semibold">BRYCE J.</span>
+                <span class="block mt-1 text-sm">From $40K to $170K</span>
               </div>
-            </a>
-            <a class="cta__item-link mx-3 position-relative text-decoration-none" href="https://about.udemy.com/story/elise-rooney/">
-              <div class="cta__item">
-                <img class="stories-img-radius img-fluid rounded" src="https://about.udemy.com/wp-content/uploads/2024/03/Elise-thumbnail-3.jpg" alt="Elise R.">
-                <div class="cta-container--top position-absolute top-0 my-2 text-center w-100">
-                  <div class="cta-name fw-bold text-black">Elise R.</div>
-                  <div class="cta-story-blurb  text-center text-black fw-bold">Echoes of transformation</div>
-                </div>
+            </div>
+          </a>
+          <a href="#" class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img src="https://about.udemy.com/wp-content/uploads/2024/03/Elise-thumbnail-3.jpg" alt="" class="w-full transition-transform duration-300 transform group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 p-4 text-white">
+                <span class="block text-lg font-semibold">ELISE R.</span>
+                <span class="block mt-1 text-sm">Echoes of transformation in the Amazon</span>
               </div>
-            </a>
-          </div>
-
-          <div class="cta-container d-flex justify-content-end align-items-center my-3">
-            <a class="cta-link text-decoration-none text-green-500 fw-bold fs-4" href="https://about.udemy.com/stories/all-stories/">
-              <span class="cta-link-text">See all stories <i class="bi bi-arrow-right fw-bold"></i></span>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>

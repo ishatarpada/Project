@@ -7,6 +7,7 @@
   <title>Blog</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/pages.css">
 </head>
 
 <body>
@@ -29,6 +30,58 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div id="testimonialCarousel" class="carousel slide testimonial-slider container-fluid p-0 my-5" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="relative bg-purple-200 p-5 h-100">
+          <div class="d-flex items-center justify-center w-full h-100 position-relative">
+            <div class="d-flex flex-column flex-md-row container mx-auto items-center">
+              <img src="https://about.udemy.com/culture/intentional-impact-a-recap-of-udemy-at-afrotech/" alt="" class="img-fluid">
+              <div class="ms-5 content text-center text-md-start">
+                <p class="text-2xl md:text-4xl lg:text-6xl font-bold font-serif fs-1 text-white">Collaborative Innovation</p>
+                <p class="text-xl text-white">We bring together diverse perspectives to foster collaborative innovation. By sharing insights and working together, we aim to create solutions that are greater than the sum of their parts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="relative bg-purple-200 p-5 h-100">
+          <div class="d-flex items-center justify-center w-full h-100 position-relative">
+            <div class="d-flex flex-column flex-md-row container mx-auto items-center">
+              <img src="https://about.udemy.com/culture/behind-the-scenes-of-udemy-businesss-success/" alt="" class="img-fluid">
+              <div class="ms-5 content text-center text-md-start">
+                <p class="text-2xl md:text-4xl lg:text-6xl font-bold font-serif fs-1 text-white">It Takes a Village</p>
+                <p class="text-xl text-white">"It takes a village" signifies the collective effort of a community in nurturing and supporting its members. In times of need, everyone contributes, reflecting the strength and unity found in shared responsibilities and mutual care.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="relative bg-purple-200 p-5 h-100">
+          <div class="d-flex items-center justify-center w-full h-100 position-relative">
+            <div class="d-flex flex-column flex-md-row container mx-auto items-center">
+              <img src="https://about.udemy.com/culture/from-workplace-ops-to-support-how-nino-grew-his-career-at-udemy/" alt="" class="img-fluid">
+              <div class="ms-5 content text-center text-md-start">
+                <p class="text-2xl md:text-4xl lg:text-6xl font-bold font-serif fs-1 text-white">Learning and Leading</p>
+                <p class="text-xl text-white">Learning and leading go hand in hand, as effective leadership stems from a continuous quest for knowledge and personal growth. By embracing lifelong learning, leaders can inspire and guide others, fostering a culture of innovation and progress.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 
   <div class="container my-5">
@@ -243,7 +296,9 @@
   </section>
 
 
-  <script src="Script/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
