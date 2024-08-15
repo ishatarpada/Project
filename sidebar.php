@@ -15,7 +15,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
   <title>Course Registration</title>
 
   <!-- css bootstrap link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
   <!-- bootstrap icon link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
@@ -35,14 +36,13 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
           <i class="bi bi-grid fw-bold fs-2 me-1"></i>
         </button>
         <div class="sidebar-logo">
-          <!-- <img src="Assests/course.png" alt="">
-          <a href="admin-dashboard.php" class="fs-5">MyCourse.io</a> -->
           <span><a href="admin-dashboard.php" class="fs-4 fw-bold text-light">Dashboard</a></span>
         </div>
       </div>
       <ul class="sidebar-nav">
         <li class="sidebar-item mb-3">
-          <a href="#" class="sidebar-link collapsed has-dropdown d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#course" aria-expanded="false" aria-controls="course">
+          <a href="#" class="sidebar-link collapsed has-dropdown d-flex align-items-center" data-bs-toggle="collapse"
+            data-bs-target="#course" aria-expanded="false" aria-controls="course">
             <i class="bi bi-basket fw-bold fs-4 me-3"></i>
             <span class="fw-medium fs-5">My Course</span>
           </a>
@@ -65,7 +65,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
           </a>
         </li>
         <li class="sidebar-item mb-3">
-          <a href="#" class="sidebar-link collapsed has-dropdown d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#instructor" aria-expanded="false" aria-controls="instructor">
+          <a href="#" class="sidebar-link collapsed has-dropdown d-flex align-items-center" data-bs-toggle="collapse"
+            data-bs-target="#instructor" aria-expanded="false" aria-controls="instructor">
             <i class="bi bi-person-circle fw-bold fs-4 me-3"></i>
             <span class="fw-medium fs-5">Instructor</span>
           </a>
