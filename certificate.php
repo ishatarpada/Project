@@ -33,7 +33,7 @@ function fetch_name($conn, $courseId)
 
 require_once('TCPDF-main/tcpdf.php');
 
-include 'config.php'; // Include database configuration
+include './config/config.php'; // Include database configuration
 $user_id = $_SESSION['user_id'];
 
 // Create new PDF document
@@ -179,4 +179,3 @@ ob_end_clean(); // Clean the buffer
 $pdf->Output('course-completion-certificate.pdf', 'D');
 
 exit;
-?>

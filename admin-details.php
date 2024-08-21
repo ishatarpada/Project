@@ -10,9 +10,9 @@
 </head>
 
 <body>
-<?php
+  <?php
 session_start();
-include 'config.php';
+include './config/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['info'])) {
     // Retrieve form data
@@ -152,8 +152,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['info'])) {
 }
 ?>
 
-<!-- SweetAlert CDN -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- SweetAlert CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

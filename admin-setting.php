@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './config/config.php';
 ?>
 
 
@@ -12,7 +12,8 @@ include 'config.php';
     <title>Admin Setting</title>
 
     <!-- css bootstrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
     <!-- bootstrap icon link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
@@ -53,31 +54,36 @@ include 'config.php';
                         <!-- Tab START -->
                         <ul class="nav nav-pills nav-tabs bg-dark flex-column p-3 rounded" role="tablist">
                             <li class="nav-item my-2" role="presentation">
-                                <a class="nav-link fw-medium fs-5 text-light active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
+                                <a class="nav-link fw-medium fs-5 text-light active" data-bs-toggle="tab" href="#tab-1"
+                                    aria-selected="true" role="tab">
                                     <i class="bi bi-globe me-2"></i>
                                     Website Settings
                                 </a>
                             </li>
                             <li class="nav-item my-2" role="presentation">
-                                <a class="nav-link fw-medium fs-5 text-light" data-bs-toggle="tab" href="#tab-2" aria-selected="false" tabindex="-1" role="tab">
+                                <a class="nav-link fw-medium fs-5 text-light" data-bs-toggle="tab" href="#tab-2" aria-selected="false"
+                                    tabindex="-1" role="tab">
                                     <i class="bi bi-gear-fill me-2"></i>
                                     General Settings
                                 </a>
                             </li>
                             <li class="nav-item my-2" role="presentation">
-                                <a class="nav-link fw-medium fs-5 text-light" data-bs-toggle="tab" href="#tab-3" aria-selected="false" tabindex="-1" role="tab">
+                                <a class="nav-link fw-medium fs-5 text-light" data-bs-toggle="tab" href="#tab-3" aria-selected="false"
+                                    tabindex="-1" role="tab">
                                     <i class="bi bi-bell-fill me-2"></i>
                                     Notification Settings
                                 </a>
                             </li>
                             <li class="nav-item my-2" role="presentation">
-                                <a class="nav-link fw-medium fs-5 text-light" data-bs-toggle="tab" href="#tab-4" aria-selected="false" tabindex="-1" role="tab">
+                                <a class="nav-link fw-medium fs-5 text-light" data-bs-toggle="tab" href="#tab-4" aria-selected="false"
+                                    tabindex="-1" role="tab">
                                     <i class="bi bi-person-circle me-2"></i>
                                     Account Settings
                                 </a>
                             </li>
                             <li class="nav-item my-2" role="presentation">
-                                <a class="nav-link fw-medium fs-5 text-light" data-bs-toggle="tab" href="#tab-5" aria-selected="false" tabindex="-1" role="tab">
+                                <a class="nav-link fw-medium fs-5 text-light" data-bs-toggle="tab" href="#tab-5" aria-selected="false"
+                                    tabindex="-1" role="tab">
                                     <i class="bi bi-sliders me-2"></i>
                                     Social Settings
                                 </a>
@@ -155,7 +161,8 @@ include 'config.php';
                                                 <div class="d-sm-flex">
                                                     <!-- Radio -->
                                                     <div class="form-check radio-bg-light me-4">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked="">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                                            checked="">
                                                         <label class="form-check-label" for="flexRadioDefault1">
                                                             Enable
                                                         </label>
@@ -220,7 +227,8 @@ include 'config.php';
                                             <!-- Choice item -->
                                             <div class="col-lg-6">
                                                 <label class="form-label fw-bold">Select Currency</label>
-                                                <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
+                                                <div class="choices" data-type="select-one" tabindex="0" role="combobox"
+                                                    aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
                                                     <div class="choices__inner">
                                                         <select class="form-select" aria-label=".form-select-sm" tabindex="-1" data-choice="active">
                                                             <option value="Select Currency">Select Currency</option>
@@ -237,7 +245,8 @@ include 'config.php';
                                             <!-- Choice item -->
                                             <div class="col-lg-6">
                                                 <label class="form-label fw-bold">Select Language</label>
-                                                <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
+                                                <div class="choices" data-type="select-one" tabindex="0" role="combobox"
+                                                    aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
                                                     <div class="choices__inner">
                                                         <select class="form-select" aria-label=".form-select-sm" tabindex="-1" data-choice="active">
                                                             <option value="Select Language">Select Language</option>
@@ -255,7 +264,8 @@ include 'config.php';
                                             <div class="col-lg-3">
                                                 <label class="form-label fw-bold">Maintainance mode</label>
                                                 <div class="form-check form-switch form-check-lg mb-0">
-                                                    <input class="form-check-input mt-0 price-toggle me-2" type="checkbox" id="flexSwitchCheckDefault">
+                                                    <input class="form-check-input mt-0 price-toggle me-2" type="checkbox"
+                                                        id="flexSwitchCheckDefault">
                                                     <label class="form-check-label mt-1" for="flexSwitchCheckDefault">Make Site Offline</label>
                                                 </div>
                                             </div>
@@ -316,7 +326,8 @@ include 'config.php';
                                         </div>
                                         <div class="form-check form-switch form-check-md mb-3">
                                             <input class="form-check-input" type="checkbox" id="checkPrivacy5">
-                                            <label class="form-check-label" for="checkPrivacy5">Notify when the instructorss added new courses</label>
+                                            <label class="form-check-label" for="checkPrivacy5">Notify when the instructorss added new
+                                                courses</label>
                                         </div>
                                         <div class="form-check form-switch form-check-md mb-3">
                                             <input class="form-check-input" type="checkbox" id="checkPrivacy6" checked="">
@@ -335,7 +346,8 @@ include 'config.php';
                                         </div>
                                         <div class="form-check form-switch form-check-md mb-3">
                                             <input class="form-check-input" type="checkbox" id="checkPrivacy9">
-                                            <label class="form-check-label" for="checkPrivacy9">Notify when students purchase new courses</label>
+                                            <label class="form-check-label" for="checkPrivacy9">Notify when students purchase new
+                                                courses</label>
                                         </div>
                                         <div class="form-check form-switch form-check-md mb-0">
                                             <input class="form-check-input" type="checkbox" id="checkPrivacy10">
@@ -355,7 +367,8 @@ include 'config.php';
                                         <!-- Content -->
                                         <div>
                                             <h6 class="h5 fw-bold">Activity Logs</h6>
-                                            <p class="mb-1 mb-md-0 text-secondary">You can save your all activity logs including unusual activity detected.</p>
+                                            <p class="mb-1 mb-md-0 text-secondary">You can save your all activity logs including unusual
+                                                activity detected.</p>
                                         </div>
                                         <!-- Switch -->
                                         <div class="form-check form-switch form-check-md mb-0">
@@ -374,7 +387,8 @@ include 'config.php';
                                         </div>
                                         <!-- Button -->
                                         <div>
-                                            <a href="#" class="btn btn-primary mb-1" data-bs-toggle="modal" data-bs-target="#changePassword">Change Password</a>
+                                            <a href="#" class="btn btn-primary mb-1" data-bs-toggle="modal"
+                                                data-bs-target="#changePassword">Change Password</a>
                                             <p class="mb-0 small h6">Last change 10 Aug 2020</p>
                                         </div>
                                     </div>
@@ -386,7 +400,9 @@ include 'config.php';
                                         <!-- Content -->
                                         <div>
                                             <h6 class="h5 fw-bold">2 Step Verification</h6>
-                                            <p class="mb-1 mb-md-0">Secure your account with 2 Step security. When it is activated you will need to enter not only your password, but also a special code using app. You can receive this code by in mobile app.</p>
+                                            <p class="mb-1 mb-md-0">Secure your account with 2 Step security. When it is activated you will
+                                                need to enter not only your password, but also a special code using app. You can receive this
+                                                code by in mobile app.</p>
                                         </div>
                                         <!-- Switch -->
                                         <div class="form-check form-switch form-check-md mb-0">
@@ -435,7 +451,8 @@ include 'config.php';
 
                                                         <!-- Table data -->
                                                         <td>
-                                                            <button class="btn btn-md bg-danger bg-opacity-10 text-danger me-1 mb-1 mb-md-0">Sign out</button>
+                                                            <button class="btn btn-md bg-danger bg-opacity-10 text-danger me-1 mb-1 mb-md-0">Sign
+                                                                out</button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -463,25 +480,29 @@ include 'config.php';
                                         <form class="row g-4">
                                             <!-- Input item -->
                                             <div class="col-sm-6">
-                                                <label class="form-label fw-bold"><i class="bi bi-google text-google-icon me-2"></i>Enter google client ID</label>
+                                                <label class="form-label fw-bold"><i class="bi bi-google text-google-icon me-2"></i>Enter google
+                                                    client ID</label>
                                                 <input class="form-control" type="text">
                                             </div>
 
                                             <!-- Input item -->
                                             <div class="col-sm-6">
-                                                <label class="form-label fw-bold"><i class="bi bi-google text-google-icon me-2"></i>Enter google API</label>
+                                                <label class="form-label fw-bold"><i class="bi bi-google text-google-icon me-2"></i>Enter google
+                                                    API</label>
                                                 <input class="form-control" type="text">
                                             </div>
 
                                             <!-- Input item -->
                                             <div class="col-sm-6">
-                                                <label class="form-label fw-bold"><i class="bi bi-facebook text-primary me-2"></i>Enter facebook client ID</label>
+                                                <label class="form-label fw-bold"><i class="bi bi-facebook text-primary me-2"></i>Enter facebook
+                                                    client ID</label>
                                                 <input class="form-control" type="text">
                                             </div>
 
                                             <!-- Input item -->
                                             <div class="col-sm-6">
-                                                <label class="form-label fw-bold"><i class="bi bi-facebook text-primary me-2"></i>Enter facebook API</label>
+                                                <label class="form-label fw-bold"><i class="bi bi-facebook text-primary me-2"></i>Enter facebook
+                                                    API</label>
                                                 <input class="form-control" type="text">
                                             </div>
 

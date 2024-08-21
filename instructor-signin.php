@@ -6,16 +6,16 @@ session_start();
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sign-in</title>
-    <!--  SweetAlert script -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign-in</title>
+  <!--  SweetAlert script -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
 
-    <?php
+  <?php
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
@@ -25,7 +25,7 @@ session_start();
     require('PHPMailer/SMTP.php');
 
     if (isset($_POST['register'])) {
-        include 'config.php';
+        include './config/config.php';
 
         $instructor = mysqli_real_escape_string($conn, $_POST['instructor']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);

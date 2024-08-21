@@ -1,10 +1,10 @@
 <?php
-include 'config.php';
+include './config/config.php';
 session_start();
 if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-    $cartItemCount = count($_SESSION['cart']);
+  $cartItemCount = count($_SESSION['cart']);
 } else {
-    $cartItemCount = 0;
+  $cartItemCount = 0;
 }
 ?>
 
@@ -68,11 +68,11 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger"
                   style="padding: 4px 8px;">
                   <?php if ($cartItemCount > 0) : ?>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger"
-                    style="padding: 5px 8px;">
-                    <?php echo $cartItemCount; ?>
-                    <span class="visually-hidden">items in cart</span>
-                  </span>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger"
+                      style="padding: 5px 8px;">
+                      <?php echo $cartItemCount; ?>
+                      <span class="visually-hidden">items in cart</span>
+                    </span>
                   <?php endif; ?>
                   <span class="visually-hidden">items in cart</span>
                 </span>
@@ -304,11 +304,11 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger"
                       style="padding: 4px 8px;">
                       <?php if ($cartItemCount > 0) : ?>
-                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger"
-                        style="padding: 5px 8px;">
-                        <?php echo $cartItemCount; ?>
-                        <span class="visually-hidden">items in cart</span>
-                      </span>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger"
+                          style="padding: 5px 8px;">
+                          <?php echo $cartItemCount; ?>
+                          <span class="visually-hidden">items in cart</span>
+                        </span>
                       <?php endif; ?>
                       <span class="visually-hidden">items in cart</span>
                     </span>
@@ -326,27 +326,27 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
               <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside"
                 data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
                 <?php
-                                if (isset($_SESSION['username'])) {
-                                    // Check if the user has an image set in the database
-                                    $username = $_SESSION['username'];
-                                    $sql = "SELECT profile_img FROM user_registration WHERE user_name = '{$username}'";
-                                    $result = mysqli_query($conn, $sql);
-                                    if ($result && mysqli_num_rows($result) > 0) {
-                                        $row = mysqli_fetch_assoc($result);
-                                        $avatar = $row['profile_img'];
-                                        // Check if the avatar is not empty
-                                        if (!empty($avatar)) {
-                                            echo '<img class="avatar-img rounded-circle" src="' . $avatar . '" alt="avatar" height="50px" width="50px">';
-                                        } else {
-                                            echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
-                                        }
-                                    } else {
-                                        echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
-                                    }
-                                } else {
-                                    echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
-                                }
-                                ?>
+                if (isset($_SESSION['username'])) {
+                  // Check if the user has an image set in the database
+                  $username = $_SESSION['username'];
+                  $sql = "SELECT profile_img FROM user_registration WHERE user_name = '{$username}'";
+                  $result = mysqli_query($conn, $sql);
+                  if ($result && mysqli_num_rows($result) > 0) {
+                    $row = mysqli_fetch_assoc($result);
+                    $avatar = $row['profile_img'];
+                    // Check if the avatar is not empty
+                    if (!empty($avatar)) {
+                      echo '<img class="avatar-img rounded-circle" src="' . $avatar . '" alt="avatar" height="50px" width="50px">';
+                    } else {
+                      echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
+                    }
+                  } else {
+                    echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
+                  }
+                } else {
+                  echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
+                }
+                ?>
               </a>
 
               <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3 user-list"
@@ -356,29 +356,29 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                   <div class="d-flex align-items-center">
                     <div class="avatar me-3">
                       <?php
-                                            if (isset($avatar)) {
-                                                echo '<img class="avatar-img rounded-circle" src="' . $avatar . '" alt="avatar" height="50px" width="50px">';
-                                            } else {
-                                                echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
-                                            }
-                                            ?>
+                      if (isset($avatar)) {
+                        echo '<img class="avatar-img rounded-circle" src="' . $avatar . '" alt="avatar" height="50px" width="50px">';
+                      } else {
+                        echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
+                      }
+                      ?>
                     </div>
                     <div>
                       <?php
-                                            if (isset($_SESSION["username"])) {
-                                                echo '<a class="h6 text-decoration-none fw-bold fs-5" href="#">' . $_SESSION["username"] . '</a>';
-                                            } else {
-                                                echo '<a class="h6 text-decoration-none fw-bold fs-5" href="#">Lori Stamen</a>';
-                                            }
-                                            ?>
+                      if (isset($_SESSION["username"])) {
+                        echo '<a class="h6 text-decoration-none fw-bold fs-5" href="#">' . $_SESSION["username"] . '</a>';
+                      } else {
+                        echo '<a class="h6 text-decoration-none fw-bold fs-5" href="#">Lori Stamen</a>';
+                      }
+                      ?>
 
                       <?php
-                                            if (isset($_SESSION["email"])) {
-                                                echo '<a class="h6 text-decoration-none" href="#">' . $_SESSION["email"] . '</a>';
-                                            } else {
-                                                echo '<a class="h6 text-decoration-none" href="#">Loristamen@gmail.com</a>';
-                                            }
-                                            ?>
+                      if (isset($_SESSION["email"])) {
+                        echo '<a class="h6 text-decoration-none" href="#">' . $_SESSION["email"] . '</a>';
+                      } else {
+                        echo '<a class="h6 text-decoration-none" href="#">Loristamen@gmail.com</a>';
+                      }
+                      ?>
                     </div>
                   </div>
                 </li>
@@ -710,151 +710,151 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
           <div class="course-video rounded container-fluid">
             <div class="course-video-boxs rounded py-2 d-flex flex-nowrap mx-auto justify-content-between">
               <?php
-                            $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Mobile App Development'";
-                            $result = $conn->query($sql);
+              $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Mobile App Development'";
+              $result = $conn->query($sql);
 
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $course_ID = $row['course_ID'];
-                                    $course_title = $row['course_title'];
-                                    $course_description = $row['course_description'];
-                                    $course_category = $row['course_category'];
-                                    $course_level = $row['course_level'];
-                                    $course_language = $row['course_language'];
-                                    $course_time = $row['course_time'];
-                                    $total_lecture = $row['total_lecture'];
-                                    $instructor = $row['instructor'];
-                                    $channel_name = $row['channel_name'];
-                                    $instructor_img = $row['instructor_img'];
-                                    $course_price = $row['course_price'];
-                                    $course_discount_price = $row['course_discount_price'];
-                                    $course_img = $row['course_img'];
-                                    $course_ratting = '4.5';
-                                    $video_url = $row['video_url'];
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                  $course_ID = $row['course_ID'];
+                  $course_title = $row['course_title'];
+                  $course_description = $row['course_description'];
+                  $course_category = $row['course_category'];
+                  $course_level = $row['course_level'];
+                  $course_language = $row['course_language'];
+                  $course_time = $row['course_time'];
+                  $total_lecture = $row['total_lecture'];
+                  $instructor = $row['instructor'];
+                  $channel_name = $row['channel_name'];
+                  $instructor_img = $row['instructor_img'];
+                  $course_price = $row['course_price'];
+                  $course_discount_price = $row['course_discount_price'];
+                  $course_img = $row['course_img'];
+                  $course_ratting = '4.5';
+                  $video_url = $row['video_url'];
 
-                                    // Check if the user is logged in
-                                    if (isset($_SESSION['user_id'])) {
-                                        // User is logged in, proceed with the course purchase check
-                                        $user_id = $_SESSION['user_id']; // Get the user ID from the session
-                                        $course_id = $row['course_ID']; // Assuming $row contains the course details
+                  // Check if the user is logged in
+                  if (isset($_SESSION['user_id'])) {
+                    // User is logged in, proceed with the course purchase check
+                    $user_id = $_SESSION['user_id']; // Get the user ID from the session
+                    $course_id = $row['course_ID']; // Assuming $row contains the course details
 
-                                        // Query to check if the course is purchased
-                                        $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
-                                        $stmt = $conn->prepare($query);
-                                        $stmt->bind_param("ii", $user_id, $course_id);
-                                        $stmt->execute();
-                                        $purchase_result = $stmt->get_result();
-                                        $purchase_row = $purchase_result->fetch_assoc();
+                    // Query to check if the course is purchased
+                    $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("ii", $user_id, $course_id);
+                    $stmt->execute();
+                    $purchase_result = $stmt->get_result();
+                    $purchase_row = $purchase_result->fetch_assoc();
 
-                                        // Check if purchase_row is not null before accessing is_purchased
-                                        $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
+                    // Check if purchase_row is not null before accessing is_purchased
+                    $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
 
-                                        // Set the URL based on whether the course is purchased
-                                        $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
-                                    } else {
-                                        // User is not logged in, redirect to the buy course video page
-                                        $url = "buy_course_video.php?id=$course_ID";
-                                    }
-                            ?>
-              <div class="video-box rounded mx-3 shadow">
-                <form action="manage_cart.php" method="post">
-                  <div class="video-img position-relative card-header">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none">
-                      <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
-                        class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
-                    </a>
-                    <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
-                      style="background-color: #d5cfcf7c;">
-                      <button
-                        class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
-                        type="submit" name="wishlistBtn">
-                        <?php
-                                                        // Check if the session for wishlist is not started
-                                                        if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
-                                                            $heartIconClass = 'bi-heart'; // Show the empty heart icon
-                                                        } else {
-                                                            // Check if the item is already in the wishlist
-                                                            $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
-                                                        }
-                                                        ?>
-                        <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="video-content my-2">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
-                      <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
-                        <?php echo htmlspecialchars($course_title); ?>
-                      </p>
-                    </a>
-                    <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
-                      name="course_channel_name">
-                      <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
-                      <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
-                        <?php echo $course_description; ?></p>
-                    </div>
-                    <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
-                      <div class="rating-icon d-flex py-1">
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-half me-1 text-warning"></i>
-                      </div>
-                      <p class="rating-ratio py-1 my-0">(1.4K)</p>
-                    </div>
-                    <div class="text-decoration-none d-flex justify-content-start align-items-center"
-                      name="course_prise">
-                      <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
-                        <del class="ms-2 text-secondary fw-normal fs-6"
-                          name="del_prise">$<?php echo $course_discount_price; ?></del>
-                      </h1>
-                    </div>
-                    <div class="d-flex justify-content-between px-2 mt-2">
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
-                    </div>
-
-                    <hr class="divider mx-auto" style="width:90%">
-
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
-                        name="course_level" type="button"><?php echo $course_level; ?></button>
-                      <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
-                        type="submit">Add to Cart</button>
-                    </div>
-
-                  </div>
-                  <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
-                  <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
-                  <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
-                  <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
-                  <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
-                  <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
-                  <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
-                  <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
-                  <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
-                  <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
-                  <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
-                  <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
-                  <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
-                  <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
-                  <input type="hidden" name="course_rating" value="4.5">
-                </form>
-              </div>
-              <?php
-                                }
+                    // Set the URL based on whether the course is purchased
+                    $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
+                  } else {
+                    // User is not logged in, redirect to the buy course video page
+                    $url = "buy_course_video.php?id=$course_ID";
+                  }
+              ?>
+                  <div class="video-box rounded mx-3 shadow">
+                    <form action="manage_cart.php" method="post">
+                      <div class="video-img position-relative card-header">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none">
+                          <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
+                            class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
+                        </a>
+                        <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
+                          style="background-color: #d5cfcf7c;">
+                          <button
+                            class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
+                            type="submit" name="wishlistBtn">
+                            <?php
+                            // Check if the session for wishlist is not started
+                            if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
+                              $heartIconClass = 'bi-heart'; // Show the empty heart icon
                             } else {
-                                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
-                    No Course Available
-                  </div>';
+                              // Check if the item is already in the wishlist
+                              $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
                             }
                             ?>
+                            <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="video-content my-2">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
+                          <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
+                            <?php echo htmlspecialchars($course_title); ?>
+                          </p>
+                        </a>
+                        <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
+                          name="course_channel_name">
+                          <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
+                          <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
+                            <?php echo $course_description; ?></p>
+                        </div>
+                        <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
+                          <div class="rating-icon d-flex py-1">
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-half me-1 text-warning"></i>
+                          </div>
+                          <p class="rating-ratio py-1 my-0">(1.4K)</p>
+                        </div>
+                        <div class="text-decoration-none d-flex justify-content-start align-items-center"
+                          name="course_prise">
+                          <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
+                            <del class="ms-2 text-secondary fw-normal fs-6"
+                              name="del_prise">$<?php echo $course_discount_price; ?></del>
+                          </h1>
+                        </div>
+                        <div class="d-flex justify-content-between px-2 mt-2">
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
+                        </div>
+
+                        <hr class="divider mx-auto" style="width:90%">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                          <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
+                            name="course_level" type="button"><?php echo $course_level; ?></button>
+                          <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
+                            type="submit">Add to Cart</button>
+                        </div>
+
+                      </div>
+                      <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
+                      <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
+                      <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
+                      <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
+                      <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
+                      <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
+                      <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
+                      <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
+                      <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
+                      <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
+                      <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
+                      <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
+                      <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
+                      <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
+                      <input type="hidden" name="course_rating" value="4.5">
+                    </form>
+                  </div>
+              <?php
+                }
+              } else {
+                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
+                    No Course Available
+                  </div>';
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -868,151 +868,151 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
           <div class="course-video rounded container-fluid">
             <div class="course-video-boxs rounded py-2 d-flex flex-nowrap mx-auto justify-content-between">
               <?php
-                            $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Cybersecurity'";
-                            $result = $conn->query($sql);
+              $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Cybersecurity'";
+              $result = $conn->query($sql);
 
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $course_ID = $row['course_ID'];
-                                    $course_title = $row['course_title'];
-                                    $course_description = $row['course_description'];
-                                    $course_category = $row['course_category'];
-                                    $course_level = $row['course_level'];
-                                    $course_language = $row['course_language'];
-                                    $course_time = $row['course_time'];
-                                    $total_lecture = $row['total_lecture'];
-                                    $instructor = $row['instructor'];
-                                    $channel_name = $row['channel_name'];
-                                    $instructor_img = $row['instructor_img'];
-                                    $course_price = $row['course_price'];
-                                    $course_discount_price = $row['course_discount_price'];
-                                    $course_img = $row['course_img'];
-                                    $course_ratting = '4.5';
-                                    $video_url = $row['video_url'];
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                  $course_ID = $row['course_ID'];
+                  $course_title = $row['course_title'];
+                  $course_description = $row['course_description'];
+                  $course_category = $row['course_category'];
+                  $course_level = $row['course_level'];
+                  $course_language = $row['course_language'];
+                  $course_time = $row['course_time'];
+                  $total_lecture = $row['total_lecture'];
+                  $instructor = $row['instructor'];
+                  $channel_name = $row['channel_name'];
+                  $instructor_img = $row['instructor_img'];
+                  $course_price = $row['course_price'];
+                  $course_discount_price = $row['course_discount_price'];
+                  $course_img = $row['course_img'];
+                  $course_ratting = '4.5';
+                  $video_url = $row['video_url'];
 
-                                    // Check if the user is logged in
-                                    if (isset($_SESSION['user_id'])) {
-                                        // User is logged in, proceed with the course purchase check
-                                        $user_id = $_SESSION['user_id']; // Get the user ID from the session
-                                        $course_id = $row['course_ID']; // Assuming $row contains the course details
+                  // Check if the user is logged in
+                  if (isset($_SESSION['user_id'])) {
+                    // User is logged in, proceed with the course purchase check
+                    $user_id = $_SESSION['user_id']; // Get the user ID from the session
+                    $course_id = $row['course_ID']; // Assuming $row contains the course details
 
-                                        // Query to check if the course is purchased
-                                        $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
-                                        $stmt = $conn->prepare($query);
-                                        $stmt->bind_param("ii", $user_id, $course_id);
-                                        $stmt->execute();
-                                        $purchase_result = $stmt->get_result();
-                                        $purchase_row = $purchase_result->fetch_assoc();
+                    // Query to check if the course is purchased
+                    $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("ii", $user_id, $course_id);
+                    $stmt->execute();
+                    $purchase_result = $stmt->get_result();
+                    $purchase_row = $purchase_result->fetch_assoc();
 
-                                        // Check if purchase_row is not null before accessing is_purchased
-                                        $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
+                    // Check if purchase_row is not null before accessing is_purchased
+                    $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
 
-                                        // Set the URL based on whether the course is purchased
-                                        $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
-                                    } else {
-                                        // User is not logged in, redirect to the buy course video page
-                                        $url = "buy_course_video.php?id=$course_ID";
-                                    }
-                            ?>
-              <div class="video-box rounded mx-3 shadow">
-                <form action="manage_cart.php" method="post">
-                  <div class="video-img position-relative card-header">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none">
-                      <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
-                        class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
-                    </a>
-                    <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
-                      style="background-color: #d5cfcf7c;">
-                      <button
-                        class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
-                        type="submit" name="wishlistBtn">
-                        <?php
-                                                        // Check if the session for wishlist is not started
-                                                        if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
-                                                            $heartIconClass = 'bi-heart'; // Show the empty heart icon
-                                                        } else {
-                                                            // Check if the item is already in the wishlist
-                                                            $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
-                                                        }
-                                                        ?>
-                        <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="video-content my-2">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
-                      <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
-                        <?php echo htmlspecialchars($course_title); ?>
-                      </p>
-                    </a>
-                    <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
-                      name="course_channel_name">
-                      <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
-                      <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
-                        <?php echo $course_description; ?></p>
-                    </div>
-                    <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
-                      <div class="rating-icon d-flex py-1">
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-half me-1 text-warning"></i>
-                      </div>
-                      <p class="rating-ratio py-1 my-0">(1.4K)</p>
-                    </div>
-                    <div class="text-decoration-none d-flex justify-content-start align-items-center"
-                      name="course_prise">
-                      <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
-                        <del class="ms-2 text-secondary fw-normal fs-6"
-                          name="del_prise">$<?php echo $course_discount_price; ?></del>
-                      </h1>
-                    </div>
-                    <div class="d-flex justify-content-between px-2 mt-2">
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
-                    </div>
-
-                    <hr class="divider mx-auto" style="width:90%">
-
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
-                        name="course_level" type="button"><?php echo $course_level; ?></button>
-                      <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
-                        type="submit">Add to Cart</button>
-                    </div>
-
-                  </div>
-                  <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
-                  <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
-                  <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
-                  <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
-                  <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
-                  <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
-                  <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
-                  <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
-                  <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
-                  <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
-                  <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
-                  <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
-                  <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
-                  <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
-                  <input type="hidden" name="course_rating" value="4.5">
-                </form>
-              </div>
-              <?php
-                                }
+                    // Set the URL based on whether the course is purchased
+                    $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
+                  } else {
+                    // User is not logged in, redirect to the buy course video page
+                    $url = "buy_course_video.php?id=$course_ID";
+                  }
+              ?>
+                  <div class="video-box rounded mx-3 shadow">
+                    <form action="manage_cart.php" method="post">
+                      <div class="video-img position-relative card-header">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none">
+                          <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
+                            class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
+                        </a>
+                        <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
+                          style="background-color: #d5cfcf7c;">
+                          <button
+                            class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
+                            type="submit" name="wishlistBtn">
+                            <?php
+                            // Check if the session for wishlist is not started
+                            if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
+                              $heartIconClass = 'bi-heart'; // Show the empty heart icon
                             } else {
-                                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
-                    No Course Available
-                  </div>';
+                              // Check if the item is already in the wishlist
+                              $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
                             }
                             ?>
+                            <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="video-content my-2">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
+                          <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
+                            <?php echo htmlspecialchars($course_title); ?>
+                          </p>
+                        </a>
+                        <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
+                          name="course_channel_name">
+                          <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
+                          <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
+                            <?php echo $course_description; ?></p>
+                        </div>
+                        <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
+                          <div class="rating-icon d-flex py-1">
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-half me-1 text-warning"></i>
+                          </div>
+                          <p class="rating-ratio py-1 my-0">(1.4K)</p>
+                        </div>
+                        <div class="text-decoration-none d-flex justify-content-start align-items-center"
+                          name="course_prise">
+                          <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
+                            <del class="ms-2 text-secondary fw-normal fs-6"
+                              name="del_prise">$<?php echo $course_discount_price; ?></del>
+                          </h1>
+                        </div>
+                        <div class="d-flex justify-content-between px-2 mt-2">
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
+                        </div>
+
+                        <hr class="divider mx-auto" style="width:90%">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                          <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
+                            name="course_level" type="button"><?php echo $course_level; ?></button>
+                          <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
+                            type="submit">Add to Cart</button>
+                        </div>
+
+                      </div>
+                      <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
+                      <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
+                      <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
+                      <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
+                      <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
+                      <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
+                      <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
+                      <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
+                      <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
+                      <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
+                      <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
+                      <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
+                      <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
+                      <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
+                      <input type="hidden" name="course_rating" value="4.5">
+                    </form>
+                  </div>
+              <?php
+                }
+              } else {
+                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
+                    No Course Available
+                  </div>';
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -1025,151 +1025,151 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
           <div class="course-video rounded container-fluid">
             <div class="course-video-boxs rounded py-2 d-flex flex-nowrap mx-auto justify-content-between">
               <?php
-                            $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Artificial Intelligence'";
-                            $result = $conn->query($sql);
+              $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Artificial Intelligence'";
+              $result = $conn->query($sql);
 
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $course_ID = $row['course_ID'];
-                                    $course_title = $row['course_title'];
-                                    $course_description = $row['course_description'];
-                                    $course_category = $row['course_category'];
-                                    $course_level = $row['course_level'];
-                                    $course_language = $row['course_language'];
-                                    $course_time = $row['course_time'];
-                                    $total_lecture = $row['total_lecture'];
-                                    $instructor = $row['instructor'];
-                                    $channel_name = $row['channel_name'];
-                                    $instructor_img = $row['instructor_img'];
-                                    $course_price = $row['course_price'];
-                                    $course_discount_price = $row['course_discount_price'];
-                                    $course_img = $row['course_img'];
-                                    $course_ratting = '4.5';
-                                    $video_url = $row['video_url'];
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                  $course_ID = $row['course_ID'];
+                  $course_title = $row['course_title'];
+                  $course_description = $row['course_description'];
+                  $course_category = $row['course_category'];
+                  $course_level = $row['course_level'];
+                  $course_language = $row['course_language'];
+                  $course_time = $row['course_time'];
+                  $total_lecture = $row['total_lecture'];
+                  $instructor = $row['instructor'];
+                  $channel_name = $row['channel_name'];
+                  $instructor_img = $row['instructor_img'];
+                  $course_price = $row['course_price'];
+                  $course_discount_price = $row['course_discount_price'];
+                  $course_img = $row['course_img'];
+                  $course_ratting = '4.5';
+                  $video_url = $row['video_url'];
 
-                                    // Check if the user is logged in
-                                    if (isset($_SESSION['user_id'])) {
-                                        // User is logged in, proceed with the course purchase check
-                                        $user_id = $_SESSION['user_id']; // Get the user ID from the session
-                                        $course_id = $row['course_ID']; // Assuming $row contains the course details
+                  // Check if the user is logged in
+                  if (isset($_SESSION['user_id'])) {
+                    // User is logged in, proceed with the course purchase check
+                    $user_id = $_SESSION['user_id']; // Get the user ID from the session
+                    $course_id = $row['course_ID']; // Assuming $row contains the course details
 
-                                        // Query to check if the course is purchased
-                                        $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
-                                        $stmt = $conn->prepare($query);
-                                        $stmt->bind_param("ii", $user_id, $course_id);
-                                        $stmt->execute();
-                                        $purchase_result = $stmt->get_result();
-                                        $purchase_row = $purchase_result->fetch_assoc();
+                    // Query to check if the course is purchased
+                    $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("ii", $user_id, $course_id);
+                    $stmt->execute();
+                    $purchase_result = $stmt->get_result();
+                    $purchase_row = $purchase_result->fetch_assoc();
 
-                                        // Check if purchase_row is not null before accessing is_purchased
-                                        $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
+                    // Check if purchase_row is not null before accessing is_purchased
+                    $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
 
-                                        // Set the URL based on whether the course is purchased
-                                        $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
-                                    } else {
-                                        // User is not logged in, redirect to the buy course video page
-                                        $url = "buy_course_video.php?id=$course_ID";
-                                    }
-                            ?>
-              <div class="video-box rounded mx-3 shadow">
-                <form action="manage_cart.php" method="post">
-                  <div class="video-img position-relative card-header">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none">
-                      <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
-                        class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
-                    </a>
-                    <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
-                      style="background-color: #d5cfcf7c;">
-                      <button
-                        class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
-                        type="submit" name="wishlistBtn">
-                        <?php
-                                                        // Check if the session for wishlist is not started
-                                                        if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
-                                                            $heartIconClass = 'bi-heart'; // Show the empty heart icon
-                                                        } else {
-                                                            // Check if the item is already in the wishlist
-                                                            $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
-                                                        }
-                                                        ?>
-                        <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="video-content my-2">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
-                      <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
-                        <?php echo htmlspecialchars($course_title); ?>
-                      </p>
-                    </a>
-                    <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
-                      name="course_channel_name">
-                      <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
-                      <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
-                        <?php echo $course_description; ?></p>
-                    </div>
-                    <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
-                      <div class="rating-icon d-flex py-1">
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-half me-1 text-warning"></i>
-                      </div>
-                      <p class="rating-ratio py-1 my-0">(1.4K)</p>
-                    </div>
-                    <div class="text-decoration-none d-flex justify-content-start align-items-center"
-                      name="course_prise">
-                      <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
-                        <del class="ms-2 text-secondary fw-normal fs-6"
-                          name="del_prise">$<?php echo $course_discount_price; ?></del>
-                      </h1>
-                    </div>
-                    <div class="d-flex justify-content-between px-2 mt-2">
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
-                    </div>
-
-                    <hr class="divider mx-auto" style="width:90%">
-
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
-                        name="course_level" type="button"><?php echo $course_level; ?></button>
-                      <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
-                        type="submit">Add to Cart</button>
-                    </div>
-
-                  </div>
-                  <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
-                  <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
-                  <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
-                  <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
-                  <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
-                  <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
-                  <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
-                  <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
-                  <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
-                  <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
-                  <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
-                  <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
-                  <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
-                  <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
-                  <input type="hidden" name="course_rating" value="4.5">
-                </form>
-              </div>
-              <?php
-                                }
+                    // Set the URL based on whether the course is purchased
+                    $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
+                  } else {
+                    // User is not logged in, redirect to the buy course video page
+                    $url = "buy_course_video.php?id=$course_ID";
+                  }
+              ?>
+                  <div class="video-box rounded mx-3 shadow">
+                    <form action="manage_cart.php" method="post">
+                      <div class="video-img position-relative card-header">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none">
+                          <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
+                            class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
+                        </a>
+                        <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
+                          style="background-color: #d5cfcf7c;">
+                          <button
+                            class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
+                            type="submit" name="wishlistBtn">
+                            <?php
+                            // Check if the session for wishlist is not started
+                            if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
+                              $heartIconClass = 'bi-heart'; // Show the empty heart icon
                             } else {
-                                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
-                    No Course Available
-                  </div>';
+                              // Check if the item is already in the wishlist
+                              $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
                             }
                             ?>
+                            <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="video-content my-2">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
+                          <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
+                            <?php echo htmlspecialchars($course_title); ?>
+                          </p>
+                        </a>
+                        <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
+                          name="course_channel_name">
+                          <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
+                          <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
+                            <?php echo $course_description; ?></p>
+                        </div>
+                        <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
+                          <div class="rating-icon d-flex py-1">
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-half me-1 text-warning"></i>
+                          </div>
+                          <p class="rating-ratio py-1 my-0">(1.4K)</p>
+                        </div>
+                        <div class="text-decoration-none d-flex justify-content-start align-items-center"
+                          name="course_prise">
+                          <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
+                            <del class="ms-2 text-secondary fw-normal fs-6"
+                              name="del_prise">$<?php echo $course_discount_price; ?></del>
+                          </h1>
+                        </div>
+                        <div class="d-flex justify-content-between px-2 mt-2">
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
+                        </div>
+
+                        <hr class="divider mx-auto" style="width:90%">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                          <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
+                            name="course_level" type="button"><?php echo $course_level; ?></button>
+                          <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
+                            type="submit">Add to Cart</button>
+                        </div>
+
+                      </div>
+                      <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
+                      <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
+                      <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
+                      <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
+                      <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
+                      <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
+                      <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
+                      <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
+                      <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
+                      <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
+                      <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
+                      <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
+                      <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
+                      <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
+                      <input type="hidden" name="course_rating" value="4.5">
+                    </form>
+                  </div>
+              <?php
+                }
+              } else {
+                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
+                    No Course Available
+                  </div>';
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -1182,151 +1182,151 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
           <div class="course-video rounded container-fluid">
             <div class="course-video-boxs rounded py-2 d-flex flex-nowrap mx-auto justify-content-between">
               <?php
-                            $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'DevOps'";
-                            $result = $conn->query($sql);
+              $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'DevOps'";
+              $result = $conn->query($sql);
 
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $course_ID = $row['course_ID'];
-                                    $course_title = $row['course_title'];
-                                    $course_description = $row['course_description'];
-                                    $course_category = $row['course_category'];
-                                    $course_level = $row['course_level'];
-                                    $course_language = $row['course_language'];
-                                    $course_time = $row['course_time'];
-                                    $total_lecture = $row['total_lecture'];
-                                    $instructor = $row['instructor'];
-                                    $channel_name = $row['channel_name'];
-                                    $instructor_img = $row['instructor_img'];
-                                    $course_price = $row['course_price'];
-                                    $course_discount_price = $row['course_discount_price'];
-                                    $course_img = $row['course_img'];
-                                    $course_ratting = '4.5';
-                                    $video_url = $row['video_url'];
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                  $course_ID = $row['course_ID'];
+                  $course_title = $row['course_title'];
+                  $course_description = $row['course_description'];
+                  $course_category = $row['course_category'];
+                  $course_level = $row['course_level'];
+                  $course_language = $row['course_language'];
+                  $course_time = $row['course_time'];
+                  $total_lecture = $row['total_lecture'];
+                  $instructor = $row['instructor'];
+                  $channel_name = $row['channel_name'];
+                  $instructor_img = $row['instructor_img'];
+                  $course_price = $row['course_price'];
+                  $course_discount_price = $row['course_discount_price'];
+                  $course_img = $row['course_img'];
+                  $course_ratting = '4.5';
+                  $video_url = $row['video_url'];
 
-                                    // Check if the user is logged in
-                                    if (isset($_SESSION['user_id'])) {
-                                        // User is logged in, proceed with the course purchase check
-                                        $user_id = $_SESSION['user_id']; // Get the user ID from the session
-                                        $course_id = $row['course_ID']; // Assuming $row contains the course details
+                  // Check if the user is logged in
+                  if (isset($_SESSION['user_id'])) {
+                    // User is logged in, proceed with the course purchase check
+                    $user_id = $_SESSION['user_id']; // Get the user ID from the session
+                    $course_id = $row['course_ID']; // Assuming $row contains the course details
 
-                                        // Query to check if the course is purchased
-                                        $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
-                                        $stmt = $conn->prepare($query);
-                                        $stmt->bind_param("ii", $user_id, $course_id);
-                                        $stmt->execute();
-                                        $purchase_result = $stmt->get_result();
-                                        $purchase_row = $purchase_result->fetch_assoc();
+                    // Query to check if the course is purchased
+                    $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("ii", $user_id, $course_id);
+                    $stmt->execute();
+                    $purchase_result = $stmt->get_result();
+                    $purchase_row = $purchase_result->fetch_assoc();
 
-                                        // Check if purchase_row is not null before accessing is_purchased
-                                        $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
+                    // Check if purchase_row is not null before accessing is_purchased
+                    $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
 
-                                        // Set the URL based on whether the course is purchased
-                                        $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
-                                    } else {
-                                        // User is not logged in, redirect to the buy course video page
-                                        $url = "buy_course_video.php?id=$course_ID";
-                                    }
-                            ?>
-              <div class="video-box rounded mx-3 shadow">
-                <form action="manage_cart.php" method="post">
-                  <div class="video-img position-relative card-header">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none">
-                      <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
-                        class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
-                    </a>
-                    <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
-                      style="background-color: #d5cfcf7c;">
-                      <button
-                        class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
-                        type="submit" name="wishlistBtn">
-                        <?php
-                                                        // Check if the session for wishlist is not started
-                                                        if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
-                                                            $heartIconClass = 'bi-heart'; // Show the empty heart icon
-                                                        } else {
-                                                            // Check if the item is already in the wishlist
-                                                            $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
-                                                        }
-                                                        ?>
-                        <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="video-content my-2">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
-                      <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
-                        <?php echo htmlspecialchars($course_title); ?>
-                      </p>
-                    </a>
-                    <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
-                      name="course_channel_name">
-                      <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
-                      <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
-                        <?php echo $course_description; ?></p>
-                    </div>
-                    <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
-                      <div class="rating-icon d-flex py-1">
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-half me-1 text-warning"></i>
-                      </div>
-                      <p class="rating-ratio py-1 my-0">(1.4K)</p>
-                    </div>
-                    <div class="text-decoration-none d-flex justify-content-start align-items-center"
-                      name="course_prise">
-                      <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
-                        <del class="ms-2 text-secondary fw-normal fs-6"
-                          name="del_prise">$<?php echo $course_discount_price; ?></del>
-                      </h1>
-                    </div>
-                    <div class="d-flex justify-content-between px-2 mt-2">
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
-                    </div>
-
-                    <hr class="divider mx-auto" style="width:90%">
-
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
-                        name="course_level" type="button"><?php echo $course_level; ?></button>
-                      <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
-                        type="submit">Add to Cart</button>
-                    </div>
-
-                  </div>
-                  <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
-                  <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
-                  <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
-                  <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
-                  <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
-                  <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
-                  <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
-                  <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
-                  <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
-                  <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
-                  <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
-                  <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
-                  <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
-                  <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
-                  <input type="hidden" name="course_rating" value="4.5">
-                </form>
-              </div>
-              <?php
-                                }
+                    // Set the URL based on whether the course is purchased
+                    $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
+                  } else {
+                    // User is not logged in, redirect to the buy course video page
+                    $url = "buy_course_video.php?id=$course_ID";
+                  }
+              ?>
+                  <div class="video-box rounded mx-3 shadow">
+                    <form action="manage_cart.php" method="post">
+                      <div class="video-img position-relative card-header">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none">
+                          <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
+                            class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
+                        </a>
+                        <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
+                          style="background-color: #d5cfcf7c;">
+                          <button
+                            class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
+                            type="submit" name="wishlistBtn">
+                            <?php
+                            // Check if the session for wishlist is not started
+                            if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
+                              $heartIconClass = 'bi-heart'; // Show the empty heart icon
                             } else {
-                                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
-                    No Course Available
-                  </div>';
+                              // Check if the item is already in the wishlist
+                              $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
                             }
                             ?>
+                            <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="video-content my-2">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
+                          <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
+                            <?php echo htmlspecialchars($course_title); ?>
+                          </p>
+                        </a>
+                        <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
+                          name="course_channel_name">
+                          <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
+                          <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
+                            <?php echo $course_description; ?></p>
+                        </div>
+                        <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
+                          <div class="rating-icon d-flex py-1">
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-half me-1 text-warning"></i>
+                          </div>
+                          <p class="rating-ratio py-1 my-0">(1.4K)</p>
+                        </div>
+                        <div class="text-decoration-none d-flex justify-content-start align-items-center"
+                          name="course_prise">
+                          <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
+                            <del class="ms-2 text-secondary fw-normal fs-6"
+                              name="del_prise">$<?php echo $course_discount_price; ?></del>
+                          </h1>
+                        </div>
+                        <div class="d-flex justify-content-between px-2 mt-2">
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
+                        </div>
+
+                        <hr class="divider mx-auto" style="width:90%">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                          <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
+                            name="course_level" type="button"><?php echo $course_level; ?></button>
+                          <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
+                            type="submit">Add to Cart</button>
+                        </div>
+
+                      </div>
+                      <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
+                      <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
+                      <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
+                      <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
+                      <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
+                      <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
+                      <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
+                      <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
+                      <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
+                      <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
+                      <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
+                      <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
+                      <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
+                      <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
+                      <input type="hidden" name="course_rating" value="4.5">
+                    </form>
+                  </div>
+              <?php
+                }
+              } else {
+                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
+                    No Course Available
+                  </div>';
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -1339,151 +1339,151 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
           <div class="course-video rounded container-fluid">
             <div class="course-video-boxs rounded py-2 d-flex flex-nowrap mx-auto justify-content-between">
               <?php
-                            $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Software Developer'";
-                            $result = $conn->query($sql);
+              $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Software Developer'";
+              $result = $conn->query($sql);
 
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $course_ID = $row['course_ID'];
-                                    $course_title = $row['course_title'];
-                                    $course_description = $row['course_description'];
-                                    $course_category = $row['course_category'];
-                                    $course_level = $row['course_level'];
-                                    $course_language = $row['course_language'];
-                                    $course_time = $row['course_time'];
-                                    $total_lecture = $row['total_lecture'];
-                                    $instructor = $row['instructor'];
-                                    $channel_name = $row['channel_name'];
-                                    $instructor_img = $row['instructor_img'];
-                                    $course_price = $row['course_price'];
-                                    $course_discount_price = $row['course_discount_price'];
-                                    $course_img = $row['course_img'];
-                                    $course_ratting = '4.5';
-                                    $video_url = $row['video_url'];
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                  $course_ID = $row['course_ID'];
+                  $course_title = $row['course_title'];
+                  $course_description = $row['course_description'];
+                  $course_category = $row['course_category'];
+                  $course_level = $row['course_level'];
+                  $course_language = $row['course_language'];
+                  $course_time = $row['course_time'];
+                  $total_lecture = $row['total_lecture'];
+                  $instructor = $row['instructor'];
+                  $channel_name = $row['channel_name'];
+                  $instructor_img = $row['instructor_img'];
+                  $course_price = $row['course_price'];
+                  $course_discount_price = $row['course_discount_price'];
+                  $course_img = $row['course_img'];
+                  $course_ratting = '4.5';
+                  $video_url = $row['video_url'];
 
-                                    // Check if the user is logged in
-                                    if (isset($_SESSION['user_id'])) {
-                                        // User is logged in, proceed with the course purchase check
-                                        $user_id = $_SESSION['user_id']; // Get the user ID from the session
-                                        $course_id = $row['course_ID']; // Assuming $row contains the course details
+                  // Check if the user is logged in
+                  if (isset($_SESSION['user_id'])) {
+                    // User is logged in, proceed with the course purchase check
+                    $user_id = $_SESSION['user_id']; // Get the user ID from the session
+                    $course_id = $row['course_ID']; // Assuming $row contains the course details
 
-                                        // Query to check if the course is purchased
-                                        $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
-                                        $stmt = $conn->prepare($query);
-                                        $stmt->bind_param("ii", $user_id, $course_id);
-                                        $stmt->execute();
-                                        $purchase_result = $stmt->get_result();
-                                        $purchase_row = $purchase_result->fetch_assoc();
+                    // Query to check if the course is purchased
+                    $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("ii", $user_id, $course_id);
+                    $stmt->execute();
+                    $purchase_result = $stmt->get_result();
+                    $purchase_row = $purchase_result->fetch_assoc();
 
-                                        // Check if purchase_row is not null before accessing is_purchased
-                                        $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
+                    // Check if purchase_row is not null before accessing is_purchased
+                    $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
 
-                                        // Set the URL based on whether the course is purchased
-                                        $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
-                                    } else {
-                                        // User is not logged in, redirect to the buy course video page
-                                        $url = "buy_course_video.php?id=$course_ID";
-                                    }
-                            ?>
-              <div class="video-box rounded mx-3 shadow">
-                <form action="manage_cart.php" method="post">
-                  <div class="video-img position-relative card-header">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none">
-                      <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
-                        class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
-                    </a>
-                    <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
-                      style="background-color: #d5cfcf7c;">
-                      <button
-                        class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
-                        type="submit" name="wishlistBtn">
-                        <?php
-                                                        // Check if the session for wishlist is not started
-                                                        if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
-                                                            $heartIconClass = 'bi-heart'; // Show the empty heart icon
-                                                        } else {
-                                                            // Check if the item is already in the wishlist
-                                                            $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
-                                                        }
-                                                        ?>
-                        <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="video-content my-2">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
-                      <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
-                        <?php echo htmlspecialchars($course_title); ?>
-                      </p>
-                    </a>
-                    <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
-                      name="course_channel_name">
-                      <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
-                      <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
-                        <?php echo $course_description; ?></p>
-                    </div>
-                    <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
-                      <div class="rating-icon d-flex py-1">
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-half me-1 text-warning"></i>
-                      </div>
-                      <p class="rating-ratio py-1 my-0">(1.4K)</p>
-                    </div>
-                    <div class="text-decoration-none d-flex justify-content-start align-items-center"
-                      name="course_prise">
-                      <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
-                        <del class="ms-2 text-secondary fw-normal fs-6"
-                          name="del_prise">$<?php echo $course_discount_price; ?></del>
-                      </h1>
-                    </div>
-                    <div class="d-flex justify-content-between px-2 mt-2">
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
-                    </div>
-
-                    <hr class="divider mx-auto" style="width:90%">
-
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
-                        name="course_level" type="button"><?php echo $course_level; ?></button>
-                      <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
-                        type="submit">Add to Cart</button>
-                    </div>
-
-                  </div>
-                  <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
-                  <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
-                  <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
-                  <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
-                  <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
-                  <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
-                  <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
-                  <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
-                  <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
-                  <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
-                  <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
-                  <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
-                  <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
-                  <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
-                  <input type="hidden" name="course_rating" value="4.5">
-                </form>
-              </div>
-              <?php
-                                }
+                    // Set the URL based on whether the course is purchased
+                    $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
+                  } else {
+                    // User is not logged in, redirect to the buy course video page
+                    $url = "buy_course_video.php?id=$course_ID";
+                  }
+              ?>
+                  <div class="video-box rounded mx-3 shadow">
+                    <form action="manage_cart.php" method="post">
+                      <div class="video-img position-relative card-header">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none">
+                          <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
+                            class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
+                        </a>
+                        <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
+                          style="background-color: #d5cfcf7c;">
+                          <button
+                            class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
+                            type="submit" name="wishlistBtn">
+                            <?php
+                            // Check if the session for wishlist is not started
+                            if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
+                              $heartIconClass = 'bi-heart'; // Show the empty heart icon
                             } else {
-                                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
-                    No Course Available
-                  </div>';
+                              // Check if the item is already in the wishlist
+                              $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
                             }
                             ?>
+                            <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="video-content my-2">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
+                          <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
+                            <?php echo htmlspecialchars($course_title); ?>
+                          </p>
+                        </a>
+                        <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
+                          name="course_channel_name">
+                          <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
+                          <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
+                            <?php echo $course_description; ?></p>
+                        </div>
+                        <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
+                          <div class="rating-icon d-flex py-1">
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-half me-1 text-warning"></i>
+                          </div>
+                          <p class="rating-ratio py-1 my-0">(1.4K)</p>
+                        </div>
+                        <div class="text-decoration-none d-flex justify-content-start align-items-center"
+                          name="course_prise">
+                          <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
+                            <del class="ms-2 text-secondary fw-normal fs-6"
+                              name="del_prise">$<?php echo $course_discount_price; ?></del>
+                          </h1>
+                        </div>
+                        <div class="d-flex justify-content-between px-2 mt-2">
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
+                        </div>
+
+                        <hr class="divider mx-auto" style="width:90%">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                          <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
+                            name="course_level" type="button"><?php echo $course_level; ?></button>
+                          <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
+                            type="submit">Add to Cart</button>
+                        </div>
+
+                      </div>
+                      <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
+                      <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
+                      <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
+                      <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
+                      <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
+                      <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
+                      <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
+                      <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
+                      <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
+                      <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
+                      <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
+                      <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
+                      <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
+                      <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
+                      <input type="hidden" name="course_rating" value="4.5">
+                    </form>
+                  </div>
+              <?php
+                }
+              } else {
+                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
+                    No Course Available
+                  </div>';
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -1496,151 +1496,151 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
           <div class="course-video rounded container-fluid">
             <div class="course-video-boxs rounded py-2 d-flex flex-nowrap mx-auto justify-content-between">
               <?php
-                            $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Web Developer'";
-                            $result = $conn->query($sql);
+              $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Web Developer'";
+              $result = $conn->query($sql);
 
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $course_ID = $row['course_ID'];
-                                    $course_title = $row['course_title'];
-                                    $course_description = $row['course_description'];
-                                    $course_category = $row['course_category'];
-                                    $course_level = $row['course_level'];
-                                    $course_language = $row['course_language'];
-                                    $course_time = $row['course_time'];
-                                    $total_lecture = $row['total_lecture'];
-                                    $instructor = $row['instructor'];
-                                    $channel_name = $row['channel_name'];
-                                    $instructor_img = $row['instructor_img'];
-                                    $course_price = $row['course_price'];
-                                    $course_discount_price = $row['course_discount_price'];
-                                    $course_img = $row['course_img'];
-                                    $course_ratting = '4.5';
-                                    $video_url = $row['video_url'];
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                  $course_ID = $row['course_ID'];
+                  $course_title = $row['course_title'];
+                  $course_description = $row['course_description'];
+                  $course_category = $row['course_category'];
+                  $course_level = $row['course_level'];
+                  $course_language = $row['course_language'];
+                  $course_time = $row['course_time'];
+                  $total_lecture = $row['total_lecture'];
+                  $instructor = $row['instructor'];
+                  $channel_name = $row['channel_name'];
+                  $instructor_img = $row['instructor_img'];
+                  $course_price = $row['course_price'];
+                  $course_discount_price = $row['course_discount_price'];
+                  $course_img = $row['course_img'];
+                  $course_ratting = '4.5';
+                  $video_url = $row['video_url'];
 
-                                    // Check if the user is logged in
-                                    if (isset($_SESSION['user_id'])) {
-                                        // User is logged in, proceed with the course purchase check
-                                        $user_id = $_SESSION['user_id']; // Get the user ID from the session
-                                        $course_id = $row['course_ID']; // Assuming $row contains the course details
+                  // Check if the user is logged in
+                  if (isset($_SESSION['user_id'])) {
+                    // User is logged in, proceed with the course purchase check
+                    $user_id = $_SESSION['user_id']; // Get the user ID from the session
+                    $course_id = $row['course_ID']; // Assuming $row contains the course details
 
-                                        // Query to check if the course is purchased
-                                        $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
-                                        $stmt = $conn->prepare($query);
-                                        $stmt->bind_param("ii", $user_id, $course_id);
-                                        $stmt->execute();
-                                        $purchase_result = $stmt->get_result();
-                                        $purchase_row = $purchase_result->fetch_assoc();
+                    // Query to check if the course is purchased
+                    $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("ii", $user_id, $course_id);
+                    $stmt->execute();
+                    $purchase_result = $stmt->get_result();
+                    $purchase_row = $purchase_result->fetch_assoc();
 
-                                        // Check if purchase_row is not null before accessing is_purchased
-                                        $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
+                    // Check if purchase_row is not null before accessing is_purchased
+                    $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
 
-                                        // Set the URL based on whether the course is purchased
-                                        $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
-                                    } else {
-                                        // User is not logged in, redirect to the buy course video page
-                                        $url = "buy_course_video.php?id=$course_ID";
-                                    }
-                            ?>
-              <div class="video-box rounded mx-3 shadow">
-                <form action="manage_cart.php" method="post">
-                  <div class="video-img position-relative card-header">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none">
-                      <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
-                        class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
-                    </a>
-                    <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
-                      style="background-color: #d5cfcf7c;">
-                      <button
-                        class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
-                        type="submit" name="wishlistBtn">
-                        <?php
-                                                        // Check if the session for wishlist is not started
-                                                        if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
-                                                            $heartIconClass = 'bi-heart'; // Show the empty heart icon
-                                                        } else {
-                                                            // Check if the item is already in the wishlist
-                                                            $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
-                                                        }
-                                                        ?>
-                        <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="video-content my-2">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
-                      <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
-                        <?php echo htmlspecialchars($course_title); ?>
-                      </p>
-                    </a>
-                    <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
-                      name="course_channel_name">
-                      <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
-                      <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
-                        <?php echo $course_description; ?></p>
-                    </div>
-                    <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
-                      <div class="rating-icon d-flex py-1">
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-half me-1 text-warning"></i>
-                      </div>
-                      <p class="rating-ratio py-1 my-0">(1.4K)</p>
-                    </div>
-                    <div class="text-decoration-none d-flex justify-content-start align-items-center"
-                      name="course_prise">
-                      <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
-                        <del class="ms-2 text-secondary fw-normal fs-6"
-                          name="del_prise">$<?php echo $course_discount_price; ?></del>
-                      </h1>
-                    </div>
-                    <div class="d-flex justify-content-between px-2 mt-2">
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
-                    </div>
-
-                    <hr class="divider mx-auto" style="width:90%">
-
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
-                        name="course_level" type="button"><?php echo $course_level; ?></button>
-                      <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
-                        type="submit">Add to Cart</button>
-                    </div>
-
-                  </div>
-                  <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
-                  <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
-                  <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
-                  <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
-                  <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
-                  <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
-                  <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
-                  <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
-                  <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
-                  <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
-                  <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
-                  <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
-                  <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
-                  <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
-                  <input type="hidden" name="course_rating" value="4.5">
-                </form>
-              </div>
-              <?php
-                                }
+                    // Set the URL based on whether the course is purchased
+                    $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
+                  } else {
+                    // User is not logged in, redirect to the buy course video page
+                    $url = "buy_course_video.php?id=$course_ID";
+                  }
+              ?>
+                  <div class="video-box rounded mx-3 shadow">
+                    <form action="manage_cart.php" method="post">
+                      <div class="video-img position-relative card-header">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none">
+                          <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
+                            class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
+                        </a>
+                        <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
+                          style="background-color: #d5cfcf7c;">
+                          <button
+                            class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
+                            type="submit" name="wishlistBtn">
+                            <?php
+                            // Check if the session for wishlist is not started
+                            if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
+                              $heartIconClass = 'bi-heart'; // Show the empty heart icon
                             } else {
-                                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
-                    No Course Available
-                  </div>';
+                              // Check if the item is already in the wishlist
+                              $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
                             }
                             ?>
+                            <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="video-content my-2">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
+                          <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
+                            <?php echo htmlspecialchars($course_title); ?>
+                          </p>
+                        </a>
+                        <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
+                          name="course_channel_name">
+                          <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
+                          <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
+                            <?php echo $course_description; ?></p>
+                        </div>
+                        <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
+                          <div class="rating-icon d-flex py-1">
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-half me-1 text-warning"></i>
+                          </div>
+                          <p class="rating-ratio py-1 my-0">(1.4K)</p>
+                        </div>
+                        <div class="text-decoration-none d-flex justify-content-start align-items-center"
+                          name="course_prise">
+                          <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
+                            <del class="ms-2 text-secondary fw-normal fs-6"
+                              name="del_prise">$<?php echo $course_discount_price; ?></del>
+                          </h1>
+                        </div>
+                        <div class="d-flex justify-content-between px-2 mt-2">
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
+                        </div>
+
+                        <hr class="divider mx-auto" style="width:90%">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                          <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
+                            name="course_level" type="button"><?php echo $course_level; ?></button>
+                          <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
+                            type="submit">Add to Cart</button>
+                        </div>
+
+                      </div>
+                      <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
+                      <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
+                      <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
+                      <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
+                      <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
+                      <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
+                      <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
+                      <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
+                      <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
+                      <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
+                      <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
+                      <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
+                      <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
+                      <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
+                      <input type="hidden" name="course_rating" value="4.5">
+                    </form>
+                  </div>
+              <?php
+                }
+              } else {
+                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
+                    No Course Available
+                  </div>';
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -1653,151 +1653,151 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
           <div class="course-video rounded container-fluid">
             <div class="course-video-boxs rounded py-2 d-flex flex-nowrap mx-auto justify-content-between">
               <?php
-                            $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Computing'";
-                            $result = $conn->query($sql);
+              $sql = "SELECT * FROM course WHERE course_status = 'approved' AND course_category = 'Computing'";
+              $result = $conn->query($sql);
 
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $course_ID = $row['course_ID'];
-                                    $course_title = $row['course_title'];
-                                    $course_description = $row['course_description'];
-                                    $course_category = $row['course_category'];
-                                    $course_level = $row['course_level'];
-                                    $course_language = $row['course_language'];
-                                    $course_time = $row['course_time'];
-                                    $total_lecture = $row['total_lecture'];
-                                    $instructor = $row['instructor'];
-                                    $channel_name = $row['channel_name'];
-                                    $instructor_img = $row['instructor_img'];
-                                    $course_price = $row['course_price'];
-                                    $course_discount_price = $row['course_discount_price'];
-                                    $course_img = $row['course_img'];
-                                    $course_ratting = '4.5';
-                                    $video_url = $row['video_url'];
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                  $course_ID = $row['course_ID'];
+                  $course_title = $row['course_title'];
+                  $course_description = $row['course_description'];
+                  $course_category = $row['course_category'];
+                  $course_level = $row['course_level'];
+                  $course_language = $row['course_language'];
+                  $course_time = $row['course_time'];
+                  $total_lecture = $row['total_lecture'];
+                  $instructor = $row['instructor'];
+                  $channel_name = $row['channel_name'];
+                  $instructor_img = $row['instructor_img'];
+                  $course_price = $row['course_price'];
+                  $course_discount_price = $row['course_discount_price'];
+                  $course_img = $row['course_img'];
+                  $course_ratting = '4.5';
+                  $video_url = $row['video_url'];
 
-                                    // Check if the user is logged in
-                                    if (isset($_SESSION['user_id'])) {
-                                        // User is logged in, proceed with the course purchase check
-                                        $user_id = $_SESSION['user_id']; // Get the user ID from the session
-                                        $course_id = $row['course_ID']; // Assuming $row contains the course details
+                  // Check if the user is logged in
+                  if (isset($_SESSION['user_id'])) {
+                    // User is logged in, proceed with the course purchase check
+                    $user_id = $_SESSION['user_id']; // Get the user ID from the session
+                    $course_id = $row['course_ID']; // Assuming $row contains the course details
 
-                                        // Query to check if the course is purchased
-                                        $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
-                                        $stmt = $conn->prepare($query);
-                                        $stmt->bind_param("ii", $user_id, $course_id);
-                                        $stmt->execute();
-                                        $purchase_result = $stmt->get_result();
-                                        $purchase_row = $purchase_result->fetch_assoc();
+                    // Query to check if the course is purchased
+                    $query = "SELECT is_purchased FROM student_course WHERE user_id = ? AND course_ID = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("ii", $user_id, $course_id);
+                    $stmt->execute();
+                    $purchase_result = $stmt->get_result();
+                    $purchase_row = $purchase_result->fetch_assoc();
 
-                                        // Check if purchase_row is not null before accessing is_purchased
-                                        $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
+                    // Check if purchase_row is not null before accessing is_purchased
+                    $is_purchased = $purchase_row && $purchase_row['is_purchased'] == 1;
 
-                                        // Set the URL based on whether the course is purchased
-                                        $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
-                                    } else {
-                                        // User is not logged in, redirect to the buy course video page
-                                        $url = "buy_course_video.php?id=$course_ID";
-                                    }
-                            ?>
-              <div class="video-box rounded mx-3 shadow">
-                <form action="manage_cart.php" method="post">
-                  <div class="video-img position-relative card-header">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none">
-                      <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
-                        class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
-                    </a>
-                    <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
-                      style="background-color: #d5cfcf7c;">
-                      <button
-                        class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
-                        type="submit" name="wishlistBtn">
-                        <?php
-                                                        // Check if the session for wishlist is not started
-                                                        if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
-                                                            $heartIconClass = 'bi-heart'; // Show the empty heart icon
-                                                        } else {
-                                                            // Check if the item is already in the wishlist
-                                                            $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
-                                                        }
-                                                        ?>
-                        <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="video-content my-2">
-                    <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
-                      <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
-                        <?php echo htmlspecialchars($course_title); ?>
-                      </p>
-                    </a>
-                    <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
-                      name="course_channel_name">
-                      <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
-                      <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
-                        <?php echo $course_description; ?></p>
-                    </div>
-                    <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
-                      <div class="rating-icon d-flex py-1">
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-fill me-1 text-warning"></i>
-                        <i class="bi bi-star-half me-1 text-warning"></i>
-                      </div>
-                      <p class="rating-ratio py-1 my-0">(1.4K)</p>
-                    </div>
-                    <div class="text-decoration-none d-flex justify-content-start align-items-center"
-                      name="course_prise">
-                      <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
-                        <del class="ms-2 text-secondary fw-normal fs-6"
-                          name="del_prise">$<?php echo $course_discount_price; ?></del>
-                      </h1>
-                    </div>
-                    <div class="d-flex justify-content-between px-2 mt-2">
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
-                      <span class="h6 fw-light mb-0 fw-semibold"><i
-                          class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
-                    </div>
-
-                    <hr class="divider mx-auto" style="width:90%">
-
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
-                        name="course_level" type="button"><?php echo $course_level; ?></button>
-                      <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
-                        type="submit">Add to Cart</button>
-                    </div>
-
-                  </div>
-                  <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
-                  <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
-                  <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
-                  <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
-                  <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
-                  <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
-                  <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
-                  <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
-                  <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
-                  <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
-                  <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
-                  <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
-                  <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
-                  <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
-                  <input type="hidden" name="course_rating" value="4.5">
-                </form>
-              </div>
-              <?php
-                                }
+                    // Set the URL based on whether the course is purchased
+                    $url = $is_purchased ? "course_video.php?id=$course_id" : "buy_course_video.php?id=$course_id";
+                  } else {
+                    // User is not logged in, redirect to the buy course video page
+                    $url = "buy_course_video.php?id=$course_ID";
+                  }
+              ?>
+                  <div class="video-box rounded mx-3 shadow">
+                    <form action="manage_cart.php" method="post">
+                      <div class="video-img position-relative card-header">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none">
+                          <img src="<?php echo $course_img; ?>" alt="<?php echo $course_title; ?>"
+                            class="border-0 position-absolute rounded" height="100%" width="100%" name="course_img">
+                        </a>
+                        <div class="heart-icon position-absolute top-0 end-0 rounded-circle py-1 px-2 m-2"
+                          style="background-color: #d5cfcf7c;">
+                          <button
+                            class="text-decoration-none text-danger text-center btn btn-transparent p-0 m-0 border-0 outline-0"
+                            type="submit" name="wishlistBtn">
+                            <?php
+                            // Check if the session for wishlist is not started
+                            if (!isset($_SESSION['wishlist']) || empty($_SESSION['wishlist'])) {
+                              $heartIconClass = 'bi-heart'; // Show the empty heart icon
                             } else {
-                                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
-                    No Course Available
-                  </div>';
+                              // Check if the item is already in the wishlist
+                              $heartIconClass = in_array($course_ID, array_column($_SESSION['wishlist'], 'Item_ID')) ? 'bi-heart-fill' : 'bi-heart';
                             }
                             ?>
+                            <i class="bi <?php echo $heartIconClass; ?> fs-5 wishlistBtn"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="video-content my-2">
+                        <a href="<?php echo $url; ?>" class="text-decoration-none text-dark">
+                          <p class="course-name m-0 fw-bolder px-3 pt-1 fs-5" name="course_name">
+                            <?php echo htmlspecialchars($course_title); ?>
+                          </p>
+                        </a>
+                        <div class="course-instructor d-flex align-items-center m-0 py-0 px-3 pt-1"
+                          name="course_channel_name">
+                          <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
+                          <p class="instructor-name fs-6 fw-semibold my-0 py-0"><?php echo $channel_name; ?></p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <p class="course-info m-0 text-secondary px-3 pt-1" name="course_info">
+                            <?php echo $course_description; ?></p>
+                        </div>
+                        <div class="course-ratting d-flex m-0 py-0 px-3 pt-1" name="course_rating">
+                          <div class="rating-icon d-flex py-1">
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-fill me-1 text-warning"></i>
+                            <i class="bi bi-star-half me-1 text-warning"></i>
+                          </div>
+                          <p class="rating-ratio py-1 my-0">(1.4K)</p>
+                        </div>
+                        <div class="text-decoration-none d-flex justify-content-start align-items-center"
+                          name="course_prise">
+                          <h1 class="course-price text-dark fw-bold m-0 px-3 pt-1 fs-5">$<?php echo $course_price; ?>
+                            <del class="ms-2 text-secondary fw-normal fs-6"
+                              name="del_prise">$<?php echo $course_discount_price; ?></del>
+                          </h1>
+                        </div>
+                        <div class="d-flex justify-content-between px-2 mt-2">
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-clock text-danger me-2"></i><?php echo $course_time; ?></span>
+                          <span class="h6 fw-light mb-0 fw-semibold"><i
+                              class="bi bi-table text-warning me-2"></i><?php echo $total_lecture; ?> lectures</span>
+                        </div>
+
+                        <hr class="divider mx-auto" style="width:90%">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                          <button class="btn bg-success bg-opacity-10 text-success mx-3 my-2 p-2 fw-bold fs-5"
+                            name="course_level" type="button"><?php echo $course_level; ?></button>
+                          <button class="btn btn-dark mx-3 my-2 p-2 text-light fw-bold fs-5 addToCartBtn" name="addCart"
+                            type="submit">Add to Cart</button>
+                        </div>
+
+                      </div>
+                      <input type="hidden" name="course_ID" value="<?php echo $course_ID ?>">
+                      <input type="hidden" name="course_title" value="<?php echo $course_title; ?>">
+                      <input type="hidden" name="course_description" value="<?php echo $course_description; ?>">
+                      <input type="hidden" name="course_category" value="<?php echo $course_category; ?>">
+                      <input type="hidden" name="course_level" value="<?php echo $course_level; ?>">
+                      <input type="hidden" name="course_language" value="<?php echo $course_language; ?>">
+                      <input type="hidden" name="course_time" value="<?php echo $course_time; ?>">
+                      <input type="hidden" name="total_lecture" value="<?php echo $total_lecture; ?>">
+                      <input type="hidden" name="instructor" value="<?php echo $instructor; ?>">
+                      <input type="hidden" name="channel_name" value="<?php echo $channel_name; ?>">
+                      <input type="hidden" name="instructor_img" value="<?php echo $instructor_img; ?>">
+                      <input type="hidden" name="course_price" value="<?php echo $course_price; ?>">
+                      <input type="hidden" name="course_discount_price" value="<?php echo $course_discount_price; ?>">
+                      <input type="hidden" name="course_img" value="<?php echo $course_img; ?>">
+                      <input type="hidden" name="course_rating" value="4.5">
+                    </form>
+                  </div>
+              <?php
+                }
+              } else {
+                echo '<div class="alert alert-info fw-bold fs-5" role="alert">
+                    No Course Available
+                  </div>';
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -1876,13 +1876,13 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
 
   <!-- join us section -->
   <?php
-    include 'join-us.php';
-    ?>
+  include 'join-us.php';
+  ?>
 
   <!-- footer -->
   <?php
-    include 'footer.php';
-    ?>
+  include 'footer.php';
+  ?>
 
 
   <!-- javascript link -->

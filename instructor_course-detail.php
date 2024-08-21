@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './config/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,8 @@ include 'config.php';
   <title>Instructor Course Details</title>
 
   <!-- css bootstrap link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
   <!-- bootstrap icon link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
@@ -33,9 +34,9 @@ include 'config.php';
     ?>
 
     <div class="main bg-body-tertiary">
-      
+
       <!-- navbar -->
-      <?php include 'navbar.php'?>
+      <?php include 'navbar.php' ?>
 
       <!-- course -->
       <div class="container-fluid m-3 bg-light">
@@ -66,8 +67,11 @@ include 'config.php';
               <h5 class="card-header-title fs-4 fw-semibold m-0 p-1">The Complete <?php echo $row["course_title"]; ?> Course
               </h5>
               <div class="d-flex justify-content-end flex-wrap align-items-center">
-                <button class="btn btn-warning  btn-lg"><a href="edit-course.php?id=<?php echo $row['course_ID'] ?>" class="text-decoration-none text-light">Edit Course</a></button>
-                <button class="btn btn-success  btn-lg m-2"><a href="upload_course_video.php?id=<?php echo $row['course_ID'] ?>" class="text-decoration-none text-light">Upload Video</a></button>
+                <button class="btn btn-warning  btn-lg"><a href="edit-course.php?id=<?php echo $row['course_ID'] ?>"
+                    class="text-decoration-none text-light">Edit Course</a></button>
+                <button class="btn btn-success  btn-lg m-2"><a
+                    href="upload_course_video.php?id=<?php echo $row['course_ID'] ?>"
+                    class="text-decoration-none text-light">Upload Video</a></button>
               </div>
             </div>
 
@@ -97,7 +101,8 @@ include 'config.php';
                     <div class="d-flex align-items-center justify-content-start">
                       <!-- Avatar image -->
                       <div class="avatar avatar-md" style="height:70px; width:70px;">
-                        <img class="avatar-img rounded-circle" src='<?php echo $row['instructor_img']; ?>' alt="avatar" style="height:70px; width:70px;">
+                        <img class="avatar-img rounded-circle" src='<?php echo $row['instructor_img']; ?>' alt="avatar"
+                          style="height:70px; width:70px;">
                       </div>
                       <div class="ms-sm-3 mt-2 mt-sm-0">
                         <h6 class="mb-0 fw-bold"><a href="#" class="text-decoration-none text-dark fs-4 text-uppercase">By

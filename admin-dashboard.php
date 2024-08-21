@@ -7,7 +7,8 @@
    <title>Admin Dashboard</title>
 
    <!-- css bootstrap link -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
    <!-- bootstrap icon link -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
@@ -39,12 +40,13 @@
              <!-- Card header -->
              <div class="card-header border-bottom d-flex justify-content-between align-items-center p-4">
                <h5 class="card-header-title fw-bold fs-4">Top Instructors</h5>
-               <a href="#" class="btn btn-primary btn-lg px-2 mb-0 text-decoration-none fw-bold btn-primary fs-5">View all</a>
+               <a href="#" class="btn btn-primary btn-lg px-2 mb-0 text-decoration-none fw-bold btn-primary fs-5">View
+                 all</a>
              </div>
 
              <?php
               // Include database connection
-              include 'config.php';
+              include './config/config.php';
 
               // SQL query to fetch user details
               $sql = "SELECT * FROM Instructors";
@@ -64,40 +66,42 @@
                   // Count the number of rows (courses) returned by the query
                   $count = mysqli_num_rows($result1);
               ?>
-                     <!-- Card body START -->
-                     <div class="card-body px-4">
-                       <!-- Instructor item START -->
-                       <div class="d-sm-flex justify-content-between align-items-center">
-                         <!-- Avatar and info -->
-                         <div class="d-sm-flex align-items-center">
-                           <!-- Avatar -->
-                           <div class="avatar avatar-md flex-shrink-0 me-3" style="height: 50px; width: 50px">
-                             <img class="avatar-img rounded-circle" src="<?php echo $profile_img ?>" style="height: 50px; width: 50px" alt="avatar" />
-                           </div>
-                           <!-- Info -->
-                           <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
-                             <h6 class="mb-1 fw-bold">
-                               <?php echo $user_name ?><i class="bi bi-patch-check-fill text-info small ms-1"></i>
-                             </h6>
-                             <ul class="list-inline mb-0 small">
-                               <li class="list-inline-item text-secondary fw-bolder me-2 mb-1 mb-sm-0">
-                                 <i class="bi bi-journal-text text-danger-emphasis me-1"></i><?php echo $count ?> Courses
-                               </li>
-                               <!-- <li class="list-inline-item text-secondary fw-bolder me-2 mb-1 mb-sm-0">
+             <!-- Card body START -->
+             <div class="card-body px-4">
+               <!-- Instructor item START -->
+               <div class="d-sm-flex justify-content-between align-items-center">
+                 <!-- Avatar and info -->
+                 <div class="d-sm-flex align-items-center">
+                   <!-- Avatar -->
+                   <div class="avatar avatar-md flex-shrink-0 me-3" style="height: 50px; width: 50px">
+                     <img class="avatar-img rounded-circle" src="<?php echo $profile_img ?>"
+                       style="height: 50px; width: 50px" alt="avatar" />
+                   </div>
+                   <!-- Info -->
+                   <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
+                     <h6 class="mb-1 fw-bold">
+                       <?php echo $user_name ?><i class="bi bi-patch-check-fill text-info small ms-1"></i>
+                     </h6>
+                     <ul class="list-inline mb-0 small">
+                       <li class="list-inline-item text-secondary fw-bolder me-2 mb-1 mb-sm-0">
+                         <i class="bi bi-journal-text text-danger-emphasis me-1"></i><?php echo $count ?> Courses
+                       </li>
+                       <!-- <li class="list-inline-item text-secondary fw-bolder me-2 mb-1 mb-sm-0">
                                  <i class="bi bi-star-fill text-warning me-1"></i>4.5/5.0
                                </li> -->
-                             </ul>
-                           </div>
-                         </div>
-                         <!-- Button -->
-                         <a href="instructor_view_details.php?id=<?php echo $row['InstructorID'] ?>" class="btn btn-sm btn-dark mb-0 fw-bolder">View</a>
-                       </div>
-                       <!-- Instructor item END -->
+                     </ul>
+                   </div>
+                 </div>
+                 <!-- Button -->
+                 <a href="instructor_view_details.php?id=<?php echo $row['InstructorID'] ?>"
+                   class="btn btn-sm btn-dark mb-0 fw-bolder">View</a>
+               </div>
+               <!-- Instructor item END -->
 
-                       <hr />
-                       <!-- Divider -->
-                       <!-- Card body END -->
-                     </div>
+               <hr />
+               <!-- Divider -->
+               <!-- Card body END -->
+             </div>
              <?php }
                   }
               ?>
@@ -115,7 +119,7 @@
 
              <?php
               // Include database connection
-              include 'config.php';
+              include './config/config.php';
 
               // SQL query to fetch user details
               $sql = "SELECT * FROM course WHERE course_status = 'pending'";
@@ -131,32 +135,33 @@
                   $reg_date = $row['created_at'];
                   $reg_time = date('H:i', strtotime($reg_date));
               ?>
-                 <!-- Card body START -->
-                 <div class="card-body p-4">
-                   <!-- Ticket item START -->
-                   <div class="d-flex justify-content-between position-relative">
-                     <div class="d-sm-flex">
-                       <!-- Avatar -->
-                       <div class="avatar avatar-md flex-shrink-0 me-2" style="height: 50px; width: 50px">
-                         <img class="avatar-img rounded-circle" style="height: 50px; width: 50px" src="<?php echo $course_img ?>" alt="avatar" />
-                       </div>
-                       <!-- Info -->
-                       <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
-                         <h6 class="mb-0">
-                           <a href="#" class="stretched-link fw-bold text-dark"><?php echo $course_name ?></a>
-                         </h6>
-                         <p class="mb-0 text-secondary fw-bolder">
-                           Approval course request by <?php echo $instructor ?>
-                         </p>
-                         <span class="small text-secondary fw-medium"><?php echo $reg_time; ?></span>
-                       </div>
-                     </div>
+             <!-- Card body START -->
+             <div class="card-body p-4">
+               <!-- Ticket item START -->
+               <div class="d-flex justify-content-between position-relative">
+                 <div class="d-sm-flex">
+                   <!-- Avatar -->
+                   <div class="avatar avatar-md flex-shrink-0 me-2" style="height: 50px; width: 50px">
+                     <img class="avatar-img rounded-circle" style="height: 50px; width: 50px"
+                       src="<?php echo $course_img ?>" alt="avatar" />
                    </div>
-                   <!-- Ticket item END -->
-
-                   <hr />
-                   <!-- Divider -->
+                   <!-- Info -->
+                   <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
+                     <h6 class="mb-0">
+                       <a href="#" class="stretched-link fw-bold text-dark"><?php echo $course_name ?></a>
+                     </h6>
+                     <p class="mb-0 text-secondary fw-bolder">
+                       Approval course request by <?php echo $instructor ?>
+                     </p>
+                     <span class="small text-secondary fw-medium"><?php echo $reg_time; ?></span>
+                   </div>
                  </div>
+               </div>
+               <!-- Ticket item END -->
+
+               <hr />
+               <!-- Divider -->
+             </div>
              <?php
                 }
               }
@@ -175,7 +180,7 @@
              </div>
              <?php
               // Include database connection
-              include 'config.php';
+              include './config/config.php';
 
               // SQL query to fetch user details
               $sql = "SELECT * FROM Instructors WHERE approve_request = 0";
@@ -191,32 +196,33 @@
                   $reg_date = $row['JoinDate'];
                   $reg_time = date('H:i', strtotime($reg_date));
               ?>
-                 <!-- Card body START -->
-                 <div class="card-body p-4">
-                   <!-- Ticket item START -->
-                   <div class="d-flex justify-content-between position-relative">
-                     <div class="d-sm-flex">
-                       <!-- Avatar -->
-                       <div class="avatar avatar-md flex-shrink-0 me-2" style="height: 50px; width: 50px">
-                         <img class="avatar-img rounded-circle" style="height: 50px; width: 50px" src="<?php echo $profile_img ?>" alt="avatar" />
-                       </div>
-                       <!-- Info -->
-                       <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
-                         <h6 class="mb-0">
-                           <a href="#" class="stretched-link fw-bold text-dark"><?php echo $user_name ?></a>
-                         </h6>
-                         <p class="mb-0 text-secondary fw-bolder">
-                           Approval request for instructor
-                         </p>
-                         <span class="small text-secondary fw-medium"><?php echo $reg_time; ?></span>
-                       </div>
-                     </div>
+             <!-- Card body START -->
+             <div class="card-body p-4">
+               <!-- Ticket item START -->
+               <div class="d-flex justify-content-between position-relative">
+                 <div class="d-sm-flex">
+                   <!-- Avatar -->
+                   <div class="avatar avatar-md flex-shrink-0 me-2" style="height: 50px; width: 50px">
+                     <img class="avatar-img rounded-circle" style="height: 50px; width: 50px"
+                       src="<?php echo $profile_img ?>" alt="avatar" />
                    </div>
-                   <!-- Ticket item END -->
-
-                   <hr />
-                   <!-- Divider -->
+                   <!-- Info -->
+                   <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
+                     <h6 class="mb-0">
+                       <a href="#" class="stretched-link fw-bold text-dark"><?php echo $user_name ?></a>
+                     </h6>
+                     <p class="mb-0 text-secondary fw-bolder">
+                       Approval request for instructor
+                     </p>
+                     <span class="small text-secondary fw-medium"><?php echo $reg_time; ?></span>
+                   </div>
                  </div>
+               </div>
+               <!-- Ticket item END -->
+
+               <hr />
+               <!-- Divider -->
+             </div>
              <?php
                 }
               }
@@ -251,11 +257,11 @@
    <!-- Your other scripts -->
 
    <script>
-     // Initialize Bootstrap dropdowns
-     var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
-     var dropdownList = dropdownElementList.map(function(dropdownToggleEl) {
-       return new bootstrap.Dropdown(dropdownToggleEl);
-     });
+   // Initialize Bootstrap dropdowns
+   var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+   var dropdownList = dropdownElementList.map(function(dropdownToggleEl) {
+     return new bootstrap.Dropdown(dropdownToggleEl);
+   });
    </script>
  </body>
 

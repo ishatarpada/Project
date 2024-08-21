@@ -17,7 +17,7 @@
   <div class="col-md-6 shadow p-3 card mx-2">
     <h1 class="text-center fw-bold">Earning</h1>
     <?php
-    include 'config.php';
+    include './config/config.php';
     $earningsData = array_fill(1, 12, 0); // Initialize all months with 0 earnings
     $sql = "SELECT MONTH(created_at) AS month, SUM(amount) AS total_earnings FROM payments GROUP BY MONTH(created_at)";
     $result = mysqli_query($conn, $sql);

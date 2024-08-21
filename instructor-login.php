@@ -6,17 +6,17 @@ session_start();
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>instructor Login</title>
-    <!-- SweetAlert script -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>instructor Login</title>
+  <!-- SweetAlert script -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-    <?php
+  <?php
     if (isset($_POST['login'])) {
-        include 'config.php';
+        include './config/config.php';
         $username = mysqli_real_escape_string($conn, $_POST['username']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $pswd = $_POST['password'];

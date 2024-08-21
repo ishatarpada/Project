@@ -6,20 +6,20 @@ session_start();
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Approve Course</title>
-    <!-- SweetAlert CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Approve Course</title>
+  <!-- SweetAlert CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
 
 <body>
-    <?php
+  <?php
 
     $course_ID = $_GET['id'];
 
-    include 'config.php';
+    include './config/config.php';
 
     // SQL query to update the course status
     $sql = "UPDATE course SET course_status = 'Approved' WHERE course_ID = {$course_ID}";

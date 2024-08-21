@@ -2,7 +2,7 @@
 session_start();
 ob_start(); // Start output buffering
 
-include 'config.php';
+include './config/config.php';
 
 require_once('TCPDF-main/tcpdf.php'); // Include TCPDF library
 

@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './config/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,8 @@ include 'config.php';
     <title>instructor</title>
 
     <!-- css bootstrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
     <!-- bootstrap icon link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
@@ -47,8 +48,11 @@ include 'config.php';
                         <!-- Search bar -->
                         <div class="col-md-8 m-0">
                             <form class="rounded position-relative">
-                                <input class="form-control bg-body py-2 fw-bold" type="search" placeholder="Search" name="search" aria-label="Search" />
-                                <button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+                                <input class="form-control bg-body py-2 fw-bold" type="search" placeholder="Search" name="search"
+                                    aria-label="Search" />
+                                <button
+                                    class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                                    type="submit">
                                     <i class="bi bi-search fs-6"></i>
                                 </button>
                             </form>
@@ -89,23 +93,23 @@ include 'config.php';
                                 // Include database connection
                                 include 'config.php';
 
-                               // Check if the search query is set
-                               $search_query = "";
-                               if (isset($_GET['search'])) {
-                                   $search_query = $_GET['search'];
-                               }
+                                // Check if the search query is set
+                                $search_query = "";
+                                if (isset($_GET['search'])) {
+                                    $search_query = $_GET['search'];
+                                }
 
-                               // SQL query to fetch course details
-                               $sql = "SELECT * FROM Instructors";
-                               if (!empty($search_query)) {
-                                   $sql .= " WHERE Instructor_Username LIKE '%$search_query%'";
-                               }
-                               $sql .= " ORDER BY InstructorID ASC";
-                               $result = mysqli_query($conn, $sql);
+                                // SQL query to fetch course details
+                                $sql = "SELECT * FROM Instructors";
+                                if (!empty($search_query)) {
+                                    $sql .= " WHERE Instructor_Username LIKE '%$search_query%'";
+                                }
+                                $sql .= " ORDER BY InstructorID ASC";
+                                $result = mysqli_query($conn, $sql);
 
-                               if (mysqli_num_rows($result) > 0) {
-                                   // Output data of each row
-                                   while ($row = mysqli_fetch_assoc($result)) {
+                                if (mysqli_num_rows($result) > 0) {
+                                    // Output data of each row
+                                    while ($row = mysqli_fetch_assoc($result)) {
                                         if (isset($_SESSION)) {
                                             $profile_img = $row['ProfilePicture'];
                                             $user_name = $row['Instructor_Username'];
@@ -119,12 +123,14 @@ include 'config.php';
                                         }
                                 ?>
                                         <tr>
-                                            <td><img src="<?php echo $profile_img ?>" alt="Profile Image" style="height:60px; width:60px;" class="rounded-circle"></td>
+                                            <td><img src="<?php echo $profile_img ?>" alt="Profile Image" style="height:60px; width:60px;"
+                                                    class="rounded-circle"></td>
                                             <td class="pt-4 fw-bolder"><?php echo $user_name ?></td>
                                             <td class="pt-4 fw-bolder"><?php echo $city ?></td>
                                             <td class="pt-4 fw-bolder"><?php echo date('Y-m-d', strtotime($date)); ?></td>
                                             <td>
-                                                <a href="instructor_view_details.php?id=<?php echo $row['InstructorID'] ?>" class="btn btn-lg text-light" style="background-color: #0c5c51;">View Details</a>
+                                                <a href="instructor_view_details.php?id=<?php echo $row['InstructorID'] ?>"
+                                                    class="btn btn-lg text-light" style="background-color: #0c5c51;">View Details</a>
                                                 <!-- Add other actions here -->
                                             </td>
                                         </tr>

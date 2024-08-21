@@ -1,7 +1,6 @@
 <?php
-include "config.php";
+include './config/config.php';
 session_start();
 session_destroy();
-header("Location: login.html"); 
+header("Location: login.html");
 exit();
-?>

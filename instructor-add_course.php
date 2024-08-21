@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>instructor add course</title>
-  <!-- SweetAlert CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instructor add course</title>
+    <!-- SweetAlert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
 
 <body>
 
-  <?php
+    <?php
     // Include database connection
-    include 'config.php';
+    include './config/config.php';
 
     // Initialize variables for potential errors
     $errors = [];

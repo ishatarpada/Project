@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './config/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,8 @@ include 'config.php';
     <title>instructor dashboard</title>
 
     <!-- css bootstrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- bootstrap icon link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -48,8 +49,10 @@ include 'config.php';
                         <div class="nav mx-3 my-xl-0 flex-nowrap align-items-center">
                             <div class="nav-item w-100">
                                 <form class="position-relative">
-                                    <input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="bg-transparent px-2 py-0 border-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="bi bi-search fs-6 text-primary"></i></button>
+                                    <input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" type="search"
+                                        placeholder="Search" aria-label="Search">
+                                    <button class="bg-transparent px-2 py-0 border-0 position-absolute top-50 end-0 translate-middle-y"
+                                        type="submit"><i class="bi bi-search fs-6 text-primary"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -66,7 +69,8 @@ include 'config.php';
 
 
                             <div class="dropdown user-info ms-1 ms-lg-0 me-2 rounded-circle">
-                                <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside"
+                                    data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
                                     <?php
                                     if (isset($_SESSION['username'])) {
                                         // Check if the user has an image set in the database
@@ -90,7 +94,8 @@ include 'config.php';
                                     }
                                     ?>
                                 </a>
-                                <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3 user-list" aria-labelledby="profileDropdown">
+                                <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3 user-list"
+                                    aria-labelledby="profileDropdown">
                                     <!-- Profile info -->
                                     <li class="px-3 mb-3">
                                         <div class="d-flex align-items-center">
@@ -120,7 +125,8 @@ include 'config.php';
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item bg-danger-soft-hover" href="log-out.php"><i class="bi bi-power fa-fw me-4 text-danger"></i>
+                                    <li><a class="dropdown-item bg-danger-soft-hover" href="log-out.php"><i
+                                                class="bi bi-power fa-fw me-4 text-danger"></i>
                                             <span class="text-danger">Log Out</span></a></li>
                                 </ul>
                             </div>
@@ -209,7 +215,9 @@ include 'config.php';
                     <div class="col-md-8 m-0">
                         <form class="rounded position-relative">
                             <input class="form-control bg-body py-2 fw-bold" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+                            <button
+                                class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                                type="submit">
                                 <i class="fas fa-search fs-6"></i>
                             </button>
                         </form>
@@ -275,7 +283,8 @@ include 'config.php';
                                                                 <div class="d-flex align-items-center py-3">
                                                                     <!-- Image -->
                                                                     <div class="w-60px">
-                                                                        <img src='<?php echo $row['course_img']; ?>' class="rounded" style="height: 50px; width: 50px;" alt="Course Image">
+                                                                        <img src='<?php echo $row['course_img']; ?>' class="rounded"
+                                                                            style="height: 50px; width: 50px;" alt="Course Image">
                                                                     </div>
                                                                     <!-- Title -->
                                                                     <h6 class="mb-0 ms-3 table-responsive-title fw-bold">
@@ -287,7 +296,8 @@ include 'config.php';
                                                                 <div class="d-flex align-items-center py-3">
                                                                     <!-- Image -->
                                                                     <div class="w-60px">
-                                                                        <img src='<?php echo $row['instructor_img']; ?>' class="rounded-circle" style="height: 50px; width: 50px" alt />
+                                                                        <img src='<?php echo $row['instructor_img']; ?>' class="rounded-circle"
+                                                                            style="height: 50px; width: 50px" alt />
                                                                     </div>
                                                                     <!-- Title -->
                                                                     <h6 class="mb-0 ms-3 table-responsive-title fw-bold">
@@ -303,7 +313,9 @@ include 'config.php';
                                                             <td class="fw-bolder"><?php echo $row["course_price"]; ?></td>
                                                             <td>
                                                                 <div class="d-flex justify-content-center align-items-center">
-                                                                    <a href="course-detail.php?id=<?php echo $row['course_ID'] ?>" class="text-decoration-none btn fw-semibold mx-2 btn-lg" style="background-color: #15739867; color:#103c4e;">Details</a>
+                                                                    <a href="course-detail.php?id=<?php echo $row['course_ID'] ?>"
+                                                                        class="text-decoration-none btn fw-semibold mx-2 btn-lg"
+                                                                        style="background-color: #15739867; color:#103c4e;">Details</a>
                                                                 </div>
                                                             </td>
                                                             <td>
@@ -312,15 +324,18 @@ include 'config.php';
                                                                     // Show Approve and Reject buttons for pending courses
                                                                 ?>
                                                                     <div class="d-flex justify-content-center align-items-center">
-                                                                        <a href="#" class="text-decoration-none btn bg-success bg-opacity-10 text-success-emphasis fw-semibold mx-2 btn-lg">Approve</a>
-                                                                        <a href="#" class="text-decoration-none btn bg-danger bg-opacity-10 text-danger-emphasis fw-semibold mx-2 btn-lg">Reject</a>
+                                                                        <a href="#"
+                                                                            class="text-decoration-none btn bg-success bg-opacity-10 text-success-emphasis fw-semibold mx-2 btn-lg">Approve</a>
+                                                                        <a href="#"
+                                                                            class="text-decoration-none btn bg-danger bg-opacity-10 text-danger-emphasis fw-semibold mx-2 btn-lg">Reject</a>
                                                                     </div>
                                                                 <?php
                                                                 } else {
                                                                     // Show Approved button for approved courses
                                                                 ?>
                                                                     <div class="d-flex justify-content-center align-items-center">
-                                                                        <a href="#" class="text-decoration-none btn fw-semibold mx-2 btn-lg" style="background-color: #6e42c142; color:#6f42c1;">Approved</a>
+                                                                        <a href="#" class="text-decoration-none btn fw-semibold mx-2 btn-lg"
+                                                                            style="background-color: #6e42c142; color:#6f42c1;">Approved</a>
                                                                     </div>
                                                                 <?php
                                                                 }

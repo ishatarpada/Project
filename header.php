@@ -1,7 +1,7 @@
 <?php
 session_start(); // Ensure session is started at the beginning
 
-include 'config.php';
+include './config/config.php';
 
 // Check if the user is logged in and set session variables
 if (isset($_SESSION['username']) && isset($_SESSION['email'])) {

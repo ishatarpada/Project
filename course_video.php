@@ -8,7 +8,8 @@
 
     <!-- css bootstrap link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- bootstrap icon link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -79,7 +80,8 @@
                     <div class="col-lg-7 offline-course-part1 mx-auto rounded p-0">
                         <div class="offline-course-video position-relative w-100">
                             <div class="offline-course-video position-relative w-100 rounded">
-                                <iframe id="main-video" width="100%" height="700" src="<?php echo $embed_url; ?>" frameborder="0" allowfullscreen class="rounded"></iframe>
+                                <iframe id="main-video" width="100%" height="700" src="<?php echo $embed_url; ?>" frameborder="0"
+                                    allowfullscreen class="rounded"></iframe>
                             </div>
                         </div>
                     </div>
@@ -90,7 +92,8 @@
                                     <p class="fw-bold fs-4 m-0"><?php echo $course_title; ?> Full Course</p>
                                 </div>
                                 <div class="complete-course my-1 me-2">
-                                    <p class="fs-5 text-secondary m-0"><?php echo $channel_name ?> - <span class="text-warning"><?php echo $total_lecture ?></span></p>
+                                    <p class="fs-5 text-secondary m-0"><?php echo $channel_name ?> - <span
+                                            class="text-warning"><?php echo $total_lecture ?></span></p>
                                 </div>
                             </div>
                             <div class="accordion accordion-flush course-list-details" id="subtopicsAccordion">
@@ -116,11 +119,14 @@
                                 ?>
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header fw-bold" id="heading-<?php echo $topicID; ?>">
-                                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<?php echo $topicID; ?>" aria-expanded="false" aria-controls="collapse-<?php echo $topicID; ?>">
+                                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapse-<?php echo $topicID; ?>" aria-expanded="false"
+                                                        aria-controls="collapse-<?php echo $topicID; ?>">
                                                         <?php echo $topic_row['course_name']; ?>
                                                     </button>
                                                 </h2>
-                                                <div id="collapse-<?php echo $topicID; ?>" class="accordion-collapse collapse show" aria-labelledby="heading-<?php echo $topicID; ?>" data-bs-parent="#subtopicsAccordion">
+                                                <div id="collapse-<?php echo $topicID; ?>" class="accordion-collapse collapse show"
+                                                    aria-labelledby="heading-<?php echo $topicID; ?>" data-bs-parent="#subtopicsAccordion">
                                                     <div class="accordion-body">
                                                         <?php
                                                         while ($subtopic_row = mysqli_fetch_assoc($result_subtopics)) {
@@ -142,14 +148,16 @@
                                                         ?>
                                                                 <div class="course-list-1 my-0 d-flex justify-content-between align-items-center flex-wrap">
                                                                     <div class="m-0 p-0 d-flex justify-content-start align-items-center flex-wrap w-75">
-                                                                        <iframe width="140" height="70" src="<?php echo $embed_link; ?>" frameborder="0" allowfullscreen class="rounded me-3"></iframe>
+                                                                        <iframe width="140" height="70" src="<?php echo $embed_link; ?>" frameborder="0" allowfullscreen
+                                                                            class="rounded me-3"></iframe>
                                                                         <div>
                                                                             <p class="m-0 text-dark fw-bolder"><?php echo $topic_name; ?></p>
                                                                             <p class="m-0 text-dark fw-medium"><?php echo $channel_name ?></p>
                                                                         </div>
                                                                     </div>
                                                                     <div class="d-flex justify-content-end align-items-center m-auto w-25">
-                                                                        <a href="#" class="bi bi-download rounded-circle text-danger bg-danger bg-opacity-10 p-2 fs-5"></a>
+                                                                        <a href="#"
+                                                                            class="bi bi-download rounded-circle text-danger bg-danger bg-opacity-10 p-2 fs-5"></a>
                                                                     </div>
                                                                 </div>
 
@@ -198,18 +206,25 @@
 
                         <nav class="m-2">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="nav-link active text-dark fw-semibold" id="nav-description-tab" data-bs-toggle="tab" data-bs-target="#nav-description" type="button" role="tab" aria-controls="nav-description" aria-selected="true">Description</button>
-                                <button class="nav-link text-dark fw-semibold" id="nav-course-tab" data-bs-toggle="tab" data-bs-target="#nav-course" type="button" role="tab" aria-controls="nav-course" aria-selected="false">Course</button>
-                                <button class="nav-link text-dark fw-semibold" id="nav-review-tab" data-bs-toggle="tab" data-bs-target="#nav-review" type="button" role="tab" aria-controls="nav-review" aria-selected="false">Review</button>
+                                <button class="nav-link active text-dark fw-semibold" id="nav-description-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-description" type="button" role="tab" aria-controls="nav-description"
+                                    aria-selected="true">Description</button>
+                                <button class="nav-link text-dark fw-semibold" id="nav-course-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-course" type="button" role="tab" aria-controls="nav-course"
+                                    aria-selected="false">Course</button>
+                                <button class="nav-link text-dark fw-semibold" id="nav-review-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-review" type="button" role="tab" aria-controls="nav-review"
+                                    aria-selected="false">Review</button>
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab" tabindex="0">
+                            <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
+                                aria-labelledby="nav-description-tab" tabindex="0">
                                 <div class="about-course-description my-3 px-5 py-2">
                                     <?php
                                     $course_ID = $_GET['id'];
                                     // Include database connection
-                                    include 'config.php';
+                                    include './config/config.php';
 
                                     // SQL query to fetch course details
                                     $sql = "SELECT * FROM course WHERE course_ID = {$course_ID}";
@@ -223,8 +238,10 @@
                                             <div class="card bg-light border rounded-3 my-3 container">
 
                                                 <!-- Card header -->
-                                                <div class="card-header bg-light border-bottom d-flex justify-content-between flex-wrap align-items-center">
-                                                    <h5 class="card-header-title fs-4 fw-semibold m-0 p-1">The Complete <?php echo $row["course_title"]; ?> Course
+                                                <div
+                                                    class="card-header bg-light border-bottom d-flex justify-content-between flex-wrap align-items-center">
+                                                    <h5 class="card-header-title fs-4 fw-semibold m-0 p-1">The Complete
+                                                        <?php echo $row["course_title"]; ?> Course
                                                     </h5>
                                                     <?php
                                                     // Assuming $row['status'] contains the status of the course, e.g., 'complete' or 'incomplete'
@@ -250,10 +267,12 @@
                                                         <div class="col-md-6">
 
                                                             <div class="d-flex justify-content-center align-items-center">
-                                                                <img src='<?php echo $row['course_img']; ?>' class="rounded" alt="" style="height:200px; width:300px;">
+                                                                <img src='<?php echo $row['course_img']; ?>' class="rounded" alt=""
+                                                                    style="height:200px; width:300px;">
                                                             </div>
 
-                                                            <p class="my-3 fw-medium text-secondary" style="font-size:18px;"><?php echo $row["course_description"]; ?>
+                                                            <p class="my-3 fw-medium text-secondary" style="font-size:18px;">
+                                                                <?php echo $row["course_description"]; ?>
                                                             </p>
                                                         </div>
 
@@ -266,10 +285,12 @@
                                                                 <div class="d-flex align-items-center justify-content-start">
                                                                     <!-- Avatar image -->
                                                                     <div class="avatar avatar-md" style="height:70px; width:70px;">
-                                                                        <img class="avatar-img rounded-circle" src='<?php echo $row['instructor_img']; ?>' alt="avatar" style="height:70px; width:70px;">
+                                                                        <img class="avatar-img rounded-circle" src='<?php echo $row['instructor_img']; ?>'
+                                                                            alt="avatar" style="height:70px; width:70px;">
                                                                     </div>
                                                                     <div class="ms-sm-3 mt-2 mt-sm-0">
-                                                                        <h6 class="mb-0 fw-bold"><a href="#" class="text-decoration-none text-dark fs-4 text-uppercase">By
+                                                                        <h6 class="mb-0 fw-bold"><a href="#"
+                                                                                class="text-decoration-none text-dark fs-4 text-uppercase">By
                                                                                 <?php echo $row["instructor"]; ?></a></h6>
                                                                         <p class="mb-0  fw-bolder fs-5"><?php echo $row["channel_name"]; ?></p>
                                                                     </div>
@@ -309,7 +330,8 @@
                                 </div>
 
                             </div>
-                            <div class="tab-pane fade container px-2" id="nav-course" role="tabpanel" aria-labelledby="nav-course-tab" tabindex="0">
+                            <div class="tab-pane fade container px-2" id="nav-course" role="tabpanel" aria-labelledby="nav-course-tab"
+                                tabindex="0">
                                 <div class="accordion accordion-flush about-course-list shadow-none border" id="subtopicsAccordion">
                                     <?php
                                     // Assuming you have fetched course ID using $_GET['id']
@@ -333,11 +355,14 @@
                                     ?>
                                                 <div class="accordion-item shadow-none">
                                                     <h2 class="accordion-header fw-bold" id="heading-<?php echo $topicID; ?>">
-                                                        <button class="accordion-button collapsed fw-bold fs-4 bg-dark text-light mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<?php echo $topicID; ?>" aria-expanded="false" aria-controls="collapse-<?php echo $topicID; ?>">
+                                                        <button class="accordion-button collapsed fw-bold fs-4 bg-dark text-light mb-2" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapse-<?php echo $topicID; ?>" aria-expanded="false"
+                                                            aria-controls="collapse-<?php echo $topicID; ?>">
                                                             <?php echo $topic_row['course_name']; ?>
                                                         </button>
                                                     </h2>
-                                                    <div id="collapse-<?php echo $topicID; ?>" class="accordion-collapse collapse show" aria-labelledby="heading-<?php echo $topicID; ?>" data-bs-parent="#subtopicsAccordion">
+                                                    <div id="collapse-<?php echo $topicID; ?>" class="accordion-collapse collapse show"
+                                                        aria-labelledby="heading-<?php echo $topicID; ?>" data-bs-parent="#subtopicsAccordion">
                                                         <div class="accordion-body p-0">
                                                             <?php
                                                             while ($subtopic_row = mysqli_fetch_assoc($result_subtopics)) {
@@ -359,14 +384,16 @@
                                                             ?>
                                                                     <div class="course-list-1 my-0 d-flex justify-content-between align-items-center flex-wrap">
                                                                         <div class="m-0 p-0 d-flex justify-content-start align-items-center flex-wrap w-75">
-                                                                            <iframe width="140" height="70" src="<?php echo $embed_link; ?>" frameborder="0" allowfullscreen class="rounded me-3"></iframe>
+                                                                            <iframe width="140" height="70" src="<?php echo $embed_link; ?>" frameborder="0" allowfullscreen
+                                                                                class="rounded me-3"></iframe>
                                                                             <div>
                                                                                 <p class="m-0 text-dark fw-bolder"><?php echo $topic_name; ?></p>
                                                                                 <p class="m-0 text-dark fw-medium"><?php echo $channel_name ?></p>
                                                                             </div>
                                                                         </div>
                                                                         <div class="d-flex justify-content-end align-items-center m-auto w-25">
-                                                                            <a href="#" class="bi bi-download rounded-circle text-danger bg-danger bg-opacity-10 p-2 fs-5"></a>
+                                                                            <a href="#"
+                                                                                class="bi bi-download rounded-circle text-danger bg-danger bg-opacity-10 p-2 fs-5"></a>
                                                                         </div>
                                                                     </div>
                                                                     <!-- Divider -->
@@ -389,7 +416,8 @@
                                     ?>
                                 </div>
                             </div>
-                            <div class="tab-pane fade p-2 m-2" id="nav-review" role="tabpanel" aria-labelledby="nav-review-tab" tabindex="0">
+                            <div class="tab-pane fade p-2 m-2" id="nav-review" role="tabpanel" aria-labelledby="nav-review-tab"
+                                tabindex="0">
                                 <div class="review d-flex mx-2">
                                     <div class="user-img me-3" style="height: 50px; width:50px;">
                                         <img src="Assests/review-1.png" alt="" class="rounded-circle img-fluid">
@@ -397,7 +425,8 @@
                                     <div class="user-comment">
                                         <h6 class="fw-bold mb-0">Leonardo Da Vinci</h6>
                                         <span class="fw-medium">Today</span>
-                                        <p class="text-secondary mb-0">Loved the course. I've learned some very subtle techniques, especially on leaves.</p>
+                                        <p class="text-secondary mb-0">Loved the course. I've learned some very subtle techniques, especially on
+                                            leaves.</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -408,7 +437,8 @@
                                     <div class="user-comment">
                                         <h6 class="fw-bold mb-0">Titania S</h6>
                                         <span class="fw-medium">Today</span>
-                                        <p class="text-secondary mb-0">I loved the course, it had been a long time since I had experimented with watercolors and now I will do it more often thanks to Kitani Studio</p>
+                                        <p class="text-secondary mb-0">I loved the course, it had been a long time since I had experimented with
+                                            watercolors and now I will do it more often thanks to Kitani Studio</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -419,7 +449,8 @@
                                     <div class="user-comment">
                                         <h6 class="fw-bold mb-0">Zhirkov</h6>
                                         <span class="fw-medium">Today</span>
-                                        <p class="text-secondary mb-0">Yes. I just emphasize that the use of Photoshop, for non-users, becomes difficult to follow. What requires a course to master it. Safe and very didactic teacher.</p>
+                                        <p class="text-secondary mb-0">Yes. I just emphasize that the use of Photoshop, for non-users, becomes
+                                            difficult to follow. What requires a course to master it. Safe and very didactic teacher.</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -430,7 +461,8 @@
                                     <div class="user-comment">
                                         <h6 class="fw-bold mb-0">Zhirkov</h6>
                                         <span class="fw-medium">Today</span>
-                                        <p class="text-secondary mb-0">Yes. I just emphasize that the use of Photoshop, for non-users, becomes difficult to follow. What requires a course to master it. Safe and very didactic teacher.</p>
+                                        <p class="text-secondary mb-0">Yes. I just emphasize that the use of Photoshop, for non-users, becomes
+                                            difficult to follow. What requires a course to master it. Safe and very didactic teacher.</p>
                                     </div>
                                 </div>
                             </div>
@@ -465,7 +497,8 @@
     <!-- <script src="Script/main.js"></script> -->
 
     <!-- js bootstrap link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 </body>
 

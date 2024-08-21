@@ -1,6 +1,6 @@
 <?php
 // Include the database configuration file
-include_once 'config.php';
+include_once './config/config.php';
 
 // Get the current date
 $current_date = date('Y-m-d H:i:s');
@@ -14,4 +14,3 @@ $updateStmt->execute();
 // Close the statement and connection
 $updateStmt->close();
 $conn->close();
-?>

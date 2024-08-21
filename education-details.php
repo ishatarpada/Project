@@ -9,9 +9,9 @@
 </head>
 
 <body>
-<?php
+  <?php
 session_start();
-include 'config.php';
+include './config/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_id = $_SESSION['user_id'];

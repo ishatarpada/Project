@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Messages</title>
+  <meta charset="UTF-8">
+  <title>Messages</title>
 </head>
+
 <body>
-    <div id="messages-container">
-        <?php
+  <div id="messages-container">
+    <?php
         // Include database connection
-        include 'config.php';
+        include './config/config.php';
 
         // Fetch messages from the database
         $sql = "SELECT * FROM messages ORDER BY created_at DESC";
@@ -28,6 +30,7 @@
         // Close database connection
         mysqli_close($conn);
         ?>
-    </div>
+  </div>
 </body>
+
 </html>

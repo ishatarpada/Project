@@ -2,40 +2,40 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Course</title>
-    <!-- SweetAlert CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Course</title>
+  <!-- SweetAlert CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
 
 <body>
 
-<?php
-// Include database connection
-include 'config.php';
+  <?php
+    // Include database connection
+    include './config/config.php';
 
-// Initialize variables for potential errors
-$errors = [];
+    // Initialize variables for potential errors
+    $errors = [];
 
-// Check if form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize input data to prevent SQL injection
-    $course_title = mysqli_real_escape_string($conn, $_POST['course_title']);
-    $course_description = mysqli_real_escape_string($conn, $_POST['course_description']);
-    $course_category = mysqli_real_escape_string($conn, $_POST['course_category']);
-    $course_level = mysqli_real_escape_string($conn, $_POST['course_level']);
-    $course_language = mysqli_real_escape_string($conn, $_POST['course_language']);
-    $course_time =mysqli_real_escape_string($conn, $_POST['course_time']);
-    $total_lecture = mysqli_real_escape_string($conn, $_POST['total_lecture']);
-    $instructor = mysqli_real_escape_string($conn, $_POST['instructor']);
-    $channel_name = mysqli_real_escape_string($conn, $_POST['channel_name']);
-    $course_price = floatval($_POST['course_price']);
-    $discount_price = mysqli_real_escape_string($conn, $_POST['discount_price']);
-    $video_url = mysqli_real_escape_string($conn, $_POST['video_url']);
+    // Check if form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Sanitize input data to prevent SQL injection
+        $course_title = mysqli_real_escape_string($conn, $_POST['course_title']);
+        $course_description = mysqli_real_escape_string($conn, $_POST['course_description']);
+        $course_category = mysqli_real_escape_string($conn, $_POST['course_category']);
+        $course_level = mysqli_real_escape_string($conn, $_POST['course_level']);
+        $course_language = mysqli_real_escape_string($conn, $_POST['course_language']);
+        $course_time = mysqli_real_escape_string($conn, $_POST['course_time']);
+        $total_lecture = mysqli_real_escape_string($conn, $_POST['total_lecture']);
+        $instructor = mysqli_real_escape_string($conn, $_POST['instructor']);
+        $channel_name = mysqli_real_escape_string($conn, $_POST['channel_name']);
+        $course_price = floatval($_POST['course_price']);
+        $discount_price = mysqli_real_escape_string($conn, $_POST['discount_price']);
+        $video_url = mysqli_real_escape_string($conn, $_POST['video_url']);
 
-    // Handle file uploads
+        // Handle file uploads
 
         // Define the target directory for uploads
         $targetDir = "Assests/";
@@ -127,8 +127,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Sorry, there was an error uploading your files.";
             }
         }
-}
-?>
+    }
+    ?>
 
 </body>
+
 </html>

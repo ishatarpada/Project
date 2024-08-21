@@ -1,6 +1,6 @@
 <?php
 // session_start();
-include 'config.php';
+include './config/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +27,8 @@ include 'config.php';
   <div class="wrapper">
     <!-- header section -->
     <?php
-        include 'instructor-sidebar.php';
-        ?>
+    include 'instructor-sidebar.php';
+    ?>
 
 
     <div class="main">
@@ -65,27 +65,27 @@ include 'config.php';
                 <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside"
                   data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
                   <?php
-                                    if (isset($_SESSION['username'])) {
-                                        // Check if the user has an image set in the database
-                                        $username = $_SESSION['username'];
-                                        $sql = "SELECT ProfilePicture FROM Instructors WHERE Instructor_Username = '{$username}'";
-                                        $result = mysqli_query($conn, $sql);
-                                        if ($result && mysqli_num_rows($result) > 0) {
-                                            $row = mysqli_fetch_assoc($result);
-                                            $avatar = $row['ProfilePicture'];
-                                            // Check if the avatar is not empty
-                                            if (!empty($avatar)) {
-                                                echo '<img class="avatar-img rounded-circle" src="' . $avatar . '" alt="avatar" height="50px" width="50px">';
-                                            } else {
-                                                echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
-                                            }
-                                        } else {
-                                            echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
-                                        }
-                                    } else {
-                                        echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
-                                    }
-                                    ?>
+                  if (isset($_SESSION['username'])) {
+                    // Check if the user has an image set in the database
+                    $username = $_SESSION['username'];
+                    $sql = "SELECT ProfilePicture FROM Instructors WHERE Instructor_Username = '{$username}'";
+                    $result = mysqli_query($conn, $sql);
+                    if ($result && mysqli_num_rows($result) > 0) {
+                      $row = mysqli_fetch_assoc($result);
+                      $avatar = $row['ProfilePicture'];
+                      // Check if the avatar is not empty
+                      if (!empty($avatar)) {
+                        echo '<img class="avatar-img rounded-circle" src="' . $avatar . '" alt="avatar" height="50px" width="50px">';
+                      } else {
+                        echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
+                      }
+                    } else {
+                      echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
+                    }
+                  } else {
+                    echo '<img class="avatar-img rounded-circle" src="Assests/admin.jpg" alt="avatar" height="50px" width="50px">';
+                  }
+                  ?>
                 </a>
                 <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3 user-list"
                   aria-labelledby="profileDropdown">
@@ -152,39 +152,39 @@ include 'config.php';
                       <div class="user-img rounded-circle position-relative m-0 ms-4" style="height: 80px; width:80px;">
                         <!-- Image Display -->
                         <?php
-                                                if (isset($_SESSION['username'])) {
-                                                    $username = $_SESSION['username'];
-                                                    $sql = "SELECT * FROM Instructors WHERE Instructor_Username = '{$username}'";
-                                                    $result = mysqli_query($conn, $sql);
-                                                    if ($result && mysqli_num_rows($result) > 0) {
-                                                        $row = mysqli_fetch_assoc($result);
-                                                        $profile_img = $row['ProfilePicture'];
-                                                        $first_name = $row['FirstName'];
-                                                        $last_name = $row['LastName'];
-                                                        $user_name = $row['Instructor_Username'];
-                                                        $mail_ID = $row['Email'];
-                                                        $phone_no = $row['phone_No'];
-                                                        $city = $row['city'];
-                                                        $about_me = $row['Bio'];
-                                                        $experience = $row['experience'];
-                                                        $ContactInformation = $row['ContactInformation'];
-                                                        $expertise = $row['Expertise'];
-                                                    }
-                                                } else {
-                                                    // Default profile image and static details
-                                                    $profile_img = 'Assets/i-1.jpg';
-                                                    $first_name = "Lori";
-                                                    $last_name = "Glory";
-                                                    $user_name = "lori glory";
-                                                    $mail_ID = "glory123@gmail.com";
-                                                    $phone_no = "7832459120";
-                                                    $city = "America";
-                                                    $about_me = "About me...";
-                                                    $experience = "experience";
-                                                    $ContactInformation = "ContactInformation";
-                                                    $expertise = "Expertise";
-                                                }
-                                                ?>
+                        if (isset($_SESSION['username'])) {
+                          $username = $_SESSION['username'];
+                          $sql = "SELECT * FROM Instructors WHERE Instructor_Username = '{$username}'";
+                          $result = mysqli_query($conn, $sql);
+                          if ($result && mysqli_num_rows($result) > 0) {
+                            $row = mysqli_fetch_assoc($result);
+                            $profile_img = $row['ProfilePicture'];
+                            $first_name = $row['FirstName'];
+                            $last_name = $row['LastName'];
+                            $user_name = $row['Instructor_Username'];
+                            $mail_ID = $row['Email'];
+                            $phone_no = $row['phone_No'];
+                            $city = $row['city'];
+                            $about_me = $row['Bio'];
+                            $experience = $row['experience'];
+                            $ContactInformation = $row['ContactInformation'];
+                            $expertise = $row['Expertise'];
+                          }
+                        } else {
+                          // Default profile image and static details
+                          $profile_img = 'Assets/i-1.jpg';
+                          $first_name = "Lori";
+                          $last_name = "Glory";
+                          $user_name = "lori glory";
+                          $mail_ID = "glory123@gmail.com";
+                          $phone_no = "7832459120";
+                          $city = "America";
+                          $about_me = "About me...";
+                          $experience = "experience";
+                          $ContactInformation = "ContactInformation";
+                          $expertise = "Expertise";
+                        }
+                        ?>
                         <img src="<?php echo $profile_img; ?>" alt=""
                           class="position-absolute top-0 start-0 rounded-circle" height="80px" width="80px">
 

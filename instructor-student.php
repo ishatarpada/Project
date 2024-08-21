@@ -1,6 +1,6 @@
 <?php
 // session_start();
-include "config.php";
+include './config/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,8 @@ include "config.php";
     <title>instructor student</title>
 
     <!-- css bootstrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
     <!-- bootstrap icon link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
@@ -42,8 +43,10 @@ include "config.php";
                         <div class="nav mx-3 my-xl-0 flex-nowrap align-items-center">
                             <div class="nav-item w-100">
                                 <form class="position-relative">
-                                    <input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="bg-transparent px-2 py-0 border-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="bi bi-search fs-6 text-primary"></i></button>
+                                    <input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" type="search"
+                                        placeholder="Search" aria-label="Search">
+                                    <button class="bg-transparent px-2 py-0 border-0 position-absolute top-50 end-0 translate-middle-y"
+                                        type="submit"><i class="bi bi-search fs-6 text-primary"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -60,7 +63,8 @@ include "config.php";
 
 
                             <div class="dropdown user-info ms-1 ms-lg-0 me-2 rounded-circle">
-                                <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside"
+                                    data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
                                     <?php
                                     if (isset($_SESSION['username'])) {
                                         // Check if the user has an image set in the database
@@ -84,7 +88,8 @@ include "config.php";
                                     }
                                     ?>
                                 </a>
-                                <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3 user-list" aria-labelledby="profileDropdown">
+                                <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3 user-list"
+                                    aria-labelledby="profileDropdown">
                                     <!-- Profile info -->
                                     <li class="px-3 mb-3">
                                         <div class="d-flex align-items-center">
@@ -114,7 +119,8 @@ include "config.php";
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item bg-danger-soft-hover" href="log-out.php"><i class="bi bi-power fa-fw me-4 text-danger"></i>
+                                    <li><a class="dropdown-item bg-danger-soft-hover" href="log-out.php"><i
+                                                class="bi bi-power fa-fw me-4 text-danger"></i>
                                             <span class="text-danger">Log Out</span></a></li>
                                 </ul>
                             </div>
@@ -134,8 +140,11 @@ include "config.php";
                         <!-- Search bar -->
                         <div class="col-md-8 m-0">
                             <form class="rounded position-relative">
-                                <input class="form-control bg-body py-2 fw-bold" type="search" placeholder="Search" aria-label="Search" />
-                                <button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+                                <input class="form-control bg-body py-2 fw-bold" type="search" placeholder="Search"
+                                    aria-label="Search" />
+                                <button
+                                    class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                                    type="submit">
                                     <i class="bi bi-search fs-6"></i>
                                 </button>
                             </form>
@@ -223,16 +232,19 @@ include "config.php";
                                                 <div class="d-sm-flex align-items-center">
                                                     <!-- Avatar -->
                                                     <div class="avatar avatar-md flex-shrink-0 rounded-circle shadow" style="height: 60px; width: 60px;">
-                                                        <img class="avatar-img rounded-circle" src="<?php echo $profile_img ?>" alt="Profile Image" style="height: 60px; width: 60px;">
+                                                        <img class="avatar-img rounded-circle" src="<?php echo $profile_img ?>" alt="Profile Image"
+                                                            style="height: 60px; width: 60px;">
                                                     </div>
                                                     <!-- Info -->
                                                     <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
                                                         <h5 class="mb-0 "><a href="#" class="fs-3 text-dark fw-bolder"><?php echo $user_name ?></a></h5>
-                                                        <span class="text-secondary fs-6"><i class="bi bi-geo-alt-fill me-1 mt-1"></i><?php echo $city ?></span>
+                                                        <span class="text-secondary fs-6"><i
+                                                                class="bi bi-geo-alt-fill me-1 mt-1"></i><?php echo $city ?></span>
                                                     </div>
                                                 </div>
                                                 <div class="view-details">
-                                                    <button class="btn btn-md" style="background-color: #0c5c51;"><a href="view-details.php?id=<?php echo $userID ?>" class="fw-bold text-light">View
+                                                    <button class="btn btn-md" style="background-color: #0c5c51;"><a
+                                                            href="view-details.php?id=<?php echo $userID ?>" class="fw-bold text-light">View
                                                             Details</a></button>
                                                 </div>
                                             </div>
@@ -241,7 +253,9 @@ include "config.php";
                                                 <!-- Payments -->
                                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                                     <div class="d-flex align-items-center">
-                                                        <div class="icon-md bg-success bg-opacity-10 text-success-emphasis rounded-circle flex-shrink-0 d-flex justify-content-center align-items-center" style="height: 50px; width: 50px;">
+                                                        <div
+                                                            class="icon-md bg-success bg-opacity-10 text-success-emphasis rounded-circle flex-shrink-0 d-flex justify-content-center align-items-center"
+                                                            style="height: 50px; width: 50px;">
                                                             <i class="bi bi-currency-dollar fs-4 fw-bold"></i>
                                                         </div>
                                                         <h6 class="mb-0 ms-2 fw-bolder fs-5">Payments</h6>
@@ -252,7 +266,9 @@ include "config.php";
                                                 <!-- Total courses -->
                                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                                     <div class="d-flex align-items-center">
-                                                        <div class="icon-md bg-danger bg-opacity-10 text-danger-emphasis rounded-circle flex-shrink-0  d-flex justify-content-center align-items-center" style="height: 50px; width: 50px;"><i class="bi bi-journal-text  fs-4 fw-bold"></i></div>
+                                                        <div
+                                                            class="icon-md bg-danger bg-opacity-10 text-danger-emphasis rounded-circle flex-shrink-0  d-flex justify-content-center align-items-center"
+                                                            style="height: 50px; width: 50px;"><i class="bi bi-journal-text  fs-4 fw-bold"></i></div>
                                                         <h6 class="mb-0 ms-2 fw-bolder fs-5">Total Course</h6>
                                                     </div>
                                                     <span class="mb-0 fw-bold fs-4"><?php echo $total_courses; ?></span>
@@ -269,10 +285,13 @@ include "config.php";
                                                     </h6>
                                                     <!-- Buttons -->
                                                     <div class="text-end text-primary-hover">
-                                                        <a href="#" class="btn btn-link text-body p-0 mb-0 me-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Message" aria-label="Message">
+                                                        <a href="#" class="btn btn-link text-body p-0 mb-0 me-2" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Message"
+                                                            aria-label="Message">
                                                             <i class="bi bi-envelope-fill fs-5"></i>
                                                         </a>
-                                                        <a href="#" class="btn btn-link text-body p-0 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Block" aria-label="Block">
+                                                        <a href="#" class="btn btn-link text-body p-0 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            data-bs-custom-class="custom-tooltip" data-bs-title="Block" aria-label="Block">
                                                             <i class="bi bi-ban fs-5"></i>
                                                         </a>
                                                     </div>

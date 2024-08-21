@@ -6,18 +6,18 @@ session_start();
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Instructor Fill Details</title>
-    <!--  SweetAlert script -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instructor Fill Details</title>
+  <!--  SweetAlert script -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
 
-    <?php
+  <?php
     if (isset($_POST['info'])) { // Changed from 'register' to 'info' to match the button name
-        include 'config.php';
+        include './config/config.php';
 
         // Handle file uploads
         $targetDir = "Assests/";

@@ -99,7 +99,7 @@
 
                 $InstructorID = $_GET['id'];
                 // Include database connection
-                include 'config.php';
+                include './config/config.php';
 
                 // SQL query to fetch course details
                 $sql = "SELECT * FROM Instructors WHERE InstructorID = $InstructorID";
@@ -209,7 +209,7 @@
 
         <?php
                 // Include database connection
-                include 'config.php';
+                include './config/config.php';
 
                 // Check if user_id is set and not empty
                 if (isset($_GET['id']) && !empty($_GET['id'])) {

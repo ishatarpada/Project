@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include './config/config.php';
 
 ?>
 
@@ -14,7 +14,8 @@ include 'config.php';
   <title>Instructor Earning</title>
 
   <!-- css bootstrap link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
   <!-- bootstrap icon link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
@@ -44,8 +45,10 @@ include 'config.php';
             <div class="nav mx-3 my-xl-0 flex-nowrap align-items-center">
               <div class="nav-item w-100">
                 <form class="position-relative">
-                  <input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" type="search" placeholder="Search" aria-label="Search">
-                  <button class="bg-transparent px-2 py-0 border-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="bi bi-search fs-6 text-primary"></i></button>
+                  <input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" type="search"
+                    placeholder="Search" aria-label="Search">
+                  <button class="bg-transparent px-2 py-0 border-0 position-absolute top-50 end-0 translate-middle-y"
+                    type="submit"><i class="bi bi-search fs-6 text-primary"></i></button>
                 </form>
               </div>
             </div>
@@ -62,7 +65,8 @@ include 'config.php';
 
 
               <div class="dropdown user-info ms-1 ms-lg-0 me-2 rounded-circle">
-                <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside"
+                  data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
                   <?php
                   if (isset($_SESSION['username'])) {
                     // Check if the user has an image set in the database
@@ -86,7 +90,8 @@ include 'config.php';
                   }
                   ?>
                 </a>
-                <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3 user-list" aria-labelledby="profileDropdown">
+                <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3 user-list"
+                  aria-labelledby="profileDropdown">
                   <!-- Profile info -->
                   <li class="px-3 mb-3">
                     <div class="d-flex align-items-center">
@@ -116,7 +121,8 @@ include 'config.php';
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item bg-danger-soft-hover" href="log-out.php"><i class="bi bi-power fa-fw me-4 text-danger"></i>
+                  <li><a class="dropdown-item bg-danger-soft-hover" href="log-out.php"><i
+                        class="bi bi-power fa-fw me-4 text-danger"></i>
                       <span class="text-danger">Log Out</span></a></li>
                 </ul>
               </div>
@@ -183,7 +189,8 @@ include 'config.php';
                                 <span class="text-secondary fw-medium me-2">Instructor: </span>
                                 <!-- Avatar image -->
                                 <div class="avatar avatar-md me-3" style="height:40px; width:40px;">
-                                  <img class="avatar-img rounded" src='<?php echo $course_row['instructor_img']; ?>' alt="avatar" style="height:40px; width:40px;">
+                                  <img class="avatar-img rounded" src='<?php echo $course_row['instructor_img']; ?>'
+                                    alt="avatar" style="height:40px; width:40px;">
                                 </div>
                                 <span class="h6 mb-0 fw-semibold"><?php echo $course_row["instructor"]; ?></span>
                               </div>
@@ -194,7 +201,8 @@ include 'config.php';
                                 <span class="text-secondary fw-medium me-2">Course Name:</span>
                                 <!-- Avatar image -->
                                 <div class="avatar avatar-md me-3" style="height:40px; width:40px;">
-                                  <img class="avatar-img rounded" src='<?php echo $course_row['course_img']; ?>' alt="avatar" style="height:40px; width:40px;">
+                                  <img class="avatar-img rounded" src='<?php echo $course_row['course_img']; ?>' alt="avatar"
+                                    style="height:40px; width:40px;">
                                 </div>
                                 <span class="h6 mb-0 fw-semibold"><?php echo $payment_row["course_name"]; ?></span>
                               </div>
@@ -202,7 +210,8 @@ include 'config.php';
 
                             <li class="list-group-item my-1 bg-transparent">
                               <span class="text-secondary fw-medium me-2">Date:</span>
-                              <span class="h6 mb-0 fw-semibold"><?php echo date('Y-m-d', strtotime($payment_row["created_at"])); ?></span>
+                              <span
+                                class="h6 mb-0 fw-semibold"><?php echo date('Y-m-d', strtotime($payment_row["created_at"])); ?></span>
                             </li>
 
                             <li class="list-group-item my-1 bg-transparent">
@@ -231,7 +240,8 @@ include 'config.php';
                             <li class="list-group-item my-1 bg-transparent">
                               <span class="text-secondary fw-medium me-2">Action:</span>
                               <span class="h6 mb-0 fw-semibold">
-                                <a href="download_receipt.php?id=<?php echo $payment_row['payment_id'] ?>" class="download-link text-light">
+                                <a href="download_receipt.php?id=<?php echo $payment_row['payment_id'] ?>"
+                                  class="download-link text-light">
                                   <i class="bi bi-download fs-4 fw-bold bg-danger px-2 rounded-circle"></i>
                                 </a>
                               </span>

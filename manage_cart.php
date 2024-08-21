@@ -6,19 +6,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Cart</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Cart</title>
 
-    <!-- SweetAlert script -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- SweetAlert script -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-    <?php
+  <?php
     session_start();
 
-    include "config.php";
+    include './config/config.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['addCart'])) {

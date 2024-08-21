@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include('./config/config.php');
 
 session_start();
 
@@ -39,41 +39,41 @@ if (!empty($_GET)) {
 <html lang="en">
 
 <head>
-    <title>Success</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Success</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
 
-    <div class="container mt-3">
+  <div class="container mt-3">
 
 
-        <table class="table table-bordered">
-            <tbody>
-                <tr>
-                    <td>Transaction Id</td>
-                    <td><?php echo isset($_SESSION['txn_id']) ? $_SESSION['txn_id'] : ''; ?></td>
-                </tr>
-                <tr>
-                    <td>Product Name</td>
-                    <td><?php echo isset($_SESSION['product']) ? $_SESSION['product'] : ''; ?></td>
-                </tr>
-                <tr>
-                    <td>Amount</td>
-                    <td><?php echo isset($_SESSION['amount']) ? $_SESSION['amount'] : ''; ?></td>
-                </tr>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>Transaction Id</td>
+          <td><?php echo isset($_SESSION['txn_id']) ? $_SESSION['txn_id'] : ''; ?></td>
+        </tr>
+        <tr>
+          <td>Product Name</td>
+          <td><?php echo isset($_SESSION['product']) ? $_SESSION['product'] : ''; ?></td>
+        </tr>
+        <tr>
+          <td>Amount</td>
+          <td><?php echo isset($_SESSION['amount']) ? $_SESSION['amount'] : ''; ?></td>
+        </tr>
 
-                <tr>
-                    <td>Payment Status</td>
-                    <td><?php echo isset($_SESSION['status']) ? $_SESSION['status'] : ''; ?></td>
-                </tr>
+        <tr>
+          <td>Payment Status</td>
+          <td><?php echo isset($_SESSION['status']) ? $_SESSION['status'] : ''; ?></td>
+        </tr>
 
-            </tbody>
-        </table>
-    </div>
+      </tbody>
+    </table>
+  </div>
 
 </body>
 

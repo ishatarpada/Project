@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './config/config.php';
 ?>
 
 <!doctype html>
@@ -11,7 +11,8 @@ include 'config.php';
   <title>Checkout</title>
 
   <!-- bootstrap css file link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
   <!-- bootstrap icon link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -28,10 +29,12 @@ include 'config.php';
   <!-- media query file link -->
   <link rel="stylesheet" href="Style/media-query.css">
 
-  <link rel="stylesheet" type="text/css" href="https://www.paypalobjects.com/webstatic/en_US/developer/docs/css/cardfields.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://www.paypalobjects.com/webstatic/en_US/developer/docs/css/cardfields.css" />
 
   <!-- paypal js script -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AXtwvxd3YWqCn1CWrLuWytq0xj2Ez5apSzpOXxL4ZFb1SZCRur5XS5yCN-KcThZP8cVUgba_ZdAKUKXY&components=card-fields,buttons,funding-eligibility">
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AXtwvxd3YWqCn1CWrLuWytq0xj2Ez5apSzpOXxL4ZFb1SZCRur5XS5yCN-KcThZP8cVUgba_ZdAKUKXY&components=card-fields,buttons,funding-eligibility">
   </script>
 
   <!-- SweetAlert script -->
@@ -61,7 +64,8 @@ include 'config.php';
             <div class="modal-content">
               <div class="modal-header bg-dark">
                 <h5 class="modal-title text-white" id="addNewcardLabel">Add card</h5>
-                <button type="button" class="btn-close btn btn-outline-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn btn-outline-light" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <form class="row text-start g-3">
@@ -90,7 +94,8 @@ include 'config.php';
                   <!-- Card name -->
                   <div class="col-12">
                     <label class="form-label">Name on Card <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" aria-label="name of card holder" placeholder="Name of card holder">
+                    <input type="text" class="form-control" aria-label="name of card holder"
+                      placeholder="Name of card holder">
                   </div>
                   <!-- Check box -->
                   <div class="col-md-12">
@@ -127,35 +132,36 @@ include 'config.php';
               foreach ($_SESSION['cart'] as $key => $item) {
                 $total = $total + (float) $item['Item_prise'];
             ?>
-                <div class="course-part-1 d-flex justify-content-start align-items-center flex-wrap p-2 my-2">
-                  <div class="course-img me-1" style="height: 180px; width:300px;">
-                    <img src="<?php echo htmlspecialchars($item['Item_Img']); ?>" alt="" width="100%" height="100%" class="rounded-3">
-                  </div>
-                  <div class="course-info me-2">
-                    <div class="course-title">
-                      <p class="course-name m-0 fw-bolder px-3 pt-1"><?php echo $item['Item_Name']; ?></p>
-                    </div>
-                    <div class="course-channel d-flex justify-content-start align-items-center ms-3 pt-1">
-                      <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
-                      <p class="instructor-name fs-6 fw-medium my-0 py-0"><?php echo $item['Item_channelName']; ?></p>
-                    </div>
-                    <div class="course-prise ms-3 p-1 d-flex justify-content-start align-items-center">
-                      <p class="m-0 fw-bold fs-5 me-2" style="color: #3dcbb1;"><?php echo $item['Item_prise']; ?></p>
-                      <p class="m-0 text-center"><del><?php echo $item['Item_del_prise']; ?></del></p>
-                    </div>
-                  </div>
-                  <div class="course-remove ms-auto">
-                    <form method="post" action="manage_cart.php">
-                      <input type="hidden" name="item_key" value="<?php echo $key; ?>">
-                      <input type="hidden" name="item_name" value="<?php echo $item['Item_Name']; ?>">
-                      <button type="submit" class="btn btn-danger btn-lg" name="removeCourse">Remove</button>
-                    </form>
-
-
-                  </div>
+            <div class="course-part-1 d-flex justify-content-start align-items-center flex-wrap p-2 my-2">
+              <div class="course-img me-1" style="height: 180px; width:300px;">
+                <img src="<?php echo htmlspecialchars($item['Item_Img']); ?>" alt="" width="100%" height="100%"
+                  class="rounded-3">
+              </div>
+              <div class="course-info me-2">
+                <div class="course-title">
+                  <p class="course-name m-0 fw-bolder px-3 pt-1"><?php echo $item['Item_Name']; ?></p>
                 </div>
+                <div class="course-channel d-flex justify-content-start align-items-center ms-3 pt-1">
+                  <i class="bi bi-person-circle fs-6 me-3 my-0 py-0" style="color: #3dcbb1;"></i>
+                  <p class="instructor-name fs-6 fw-medium my-0 py-0"><?php echo $item['Item_channelName']; ?></p>
+                </div>
+                <div class="course-prise ms-3 p-1 d-flex justify-content-start align-items-center">
+                  <p class="m-0 fw-bold fs-5 me-2" style="color: #3dcbb1;"><?php echo $item['Item_prise']; ?></p>
+                  <p class="m-0 text-center"><del><?php echo $item['Item_del_prise']; ?></del></p>
+                </div>
+              </div>
+              <div class="course-remove ms-auto">
+                <form method="post" action="manage_cart.php">
+                  <input type="hidden" name="item_key" value="<?php echo $key; ?>">
+                  <input type="hidden" name="item_name" value="<?php echo $item['Item_Name']; ?>">
+                  <button type="submit" class="btn btn-danger btn-lg" name="removeCourse">Remove</button>
+                </form>
 
-                <hr>
+
+              </div>
+            </div>
+
+            <hr>
             <?php
               }
             }
@@ -221,29 +227,29 @@ include 'config.php';
                   } else {
           ?>
 
-                    <form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
-                      <input type="hidden" name="business" value="sb-ue2eh27310939@business.example.com">
-                      <?php
+          <form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
+            <input type="hidden" name="business" value="sb-ue2eh27310939@business.example.com">
+            <?php
                       // Include all cart items in PayPal form
                       if (isset($_SESSION['cart'])) {
                         $index = 1;
                         foreach ($_SESSION['cart'] as $key => $item) {
                       ?>
-                          <input type="hidden" name="item_name_<?php echo $index; ?>" value="<?php echo $item['Item_Name']; ?>">
-                          <input type="hidden" name="amount_<?php echo $index; ?>" value="<?php echo $item['Item_prise']; ?>">
-                      <?php
+            <input type="hidden" name="item_name_<?php echo $index; ?>" value="<?php echo $item['Item_Name']; ?>">
+            <input type="hidden" name="amount_<?php echo $index; ?>" value="<?php echo $item['Item_prise']; ?>">
+            <?php
                           $index++;
                         }
                       }
                       ?>
-                      <input type="hidden" name="currency_code" value="USD">
-                      <input type="hidden" name="no_shipping" value="1">
-                      <input type="hidden" name="cmd" value="_cart">
-                      <input type="hidden" name="upload" value="1">
-                      <input type="hidden" name="return" value="http://localhost/courseregistration/success.php">
-                      <input type="hidden" name="cancel_return" value="http://localhost/courseregistration/cancel.php">
-                      <button type="submit" class="btn btn-dark btn-lg">Processed</button>
-                    </form>
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="no_shipping" value="1">
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="upload" value="1">
+            <input type="hidden" name="return" value="http://localhost/courseregistration/success.php">
+            <input type="hidden" name="cancel_return" value="http://localhost/courseregistration/cancel.php">
+            <button type="submit" class="btn btn-dark btn-lg">Processed</button>
+          </form>
           <?php
                   }
                 } else {
@@ -272,7 +278,8 @@ include 'config.php';
   <script src="Script/payment.js"></script>
 
   <!-- bootstrap js link -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>
 </body>
 

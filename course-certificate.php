@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'config.php';
+include './config/config.php';
 
 $courseID = $_GET['id'];
 
@@ -38,7 +38,8 @@ $current_date = date("F j, Y");
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Course Completion Certificate</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -91,14 +92,17 @@ $current_date = date("F j, Y");
         <p class="text-center display-3 fw-bold certificate my-4">Certification</p>
         <p class="text-center container text-light fs-5 mx-auto title py-2 fw-semibold rounded">This
           is proudly presented to</p>
-        <p class="display-5 text-center text-uppercase fw-medium border-bottom border-dark border-2" style="color: #181857;">
+        <p class="display-5 text-center text-uppercase fw-medium border-bottom border-dark border-2"
+          style="color: #181857;">
           <?php echo htmlspecialchars($row['user_name']); ?>
         </p>
         <p class="fw-semibold mx-auto">With dedication and hard
-          work, you have achieved a significant milestone in this <b><?php echo htmlspecialchars($row1['course_title']); ?> course</b>. Your
+          work, you have achieved a significant milestone in this
+          <b><?php echo htmlspecialchars($row1['course_title']); ?> course</b>. Your
           commitment to
           learning and growth is truly commendable. Congratulations on this
-          remarkable achievement!</p>
+          remarkable achievement!
+        </p>
         <div class="box d-flex justify-content-between mx-auto align-items-center">
           <div class="date fs-5 text-center">
             <?php echo $current_date; ?>
@@ -115,7 +119,8 @@ $current_date = date("F j, Y");
     </div>
   </div>
   <div class="d-flex justify-content-center align-items-center">
-    <button onclick="downloadCertificate()" class="download btn btn-lg btn-primary" name="download">Download Certificate</button>
+    <button onclick="downloadCertificate()" class="download btn btn-lg btn-primary" name="download">Download
+      Certificate</button>
   </div>
 
   <script>
@@ -125,7 +130,9 @@ $current_date = date("F j, Y");
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include './config/config.php';
 
 ?>
 
@@ -13,7 +13,8 @@ include 'config.php';
     <title>Admin Course</title>
 
     <!-- css bootstrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
     <!-- bootstrap icon link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
@@ -42,12 +43,14 @@ include 'config.php';
             <div class="container-fluid my-2 mx-2 bg-light">
                 <div class="title d-flex justify-content-between align-items-center">
                     <h1 class="fw-bold mx-3 mb-3">Course</h1>
-                    <button class="btn btn-primary btn-lg me-5"><a href="create-course.html" class="text-decoration-none text-light">Create Course</a></button>
+                    <button class="btn btn-primary btn-lg me-5"><a href="create-course.html"
+                            class="text-decoration-none text-light">Create Course</a></button>
                 </div>
                 <div class="row g-4 container-fluid">
                     <!-- Counter item -->
                     <div class="col-sm-6 col-lg-4">
-                        <div class="d-flex justify-content-center align-items-center p-5 bg-primary-subtle bg-opacity-10 rounded-3 card-1">
+                        <div
+                            class="d-flex justify-content-center align-items-center p-5 bg-primary-subtle bg-opacity-10 rounded-3 card-1">
                             <div class="ms-4">
                                 <div class="d-flex">
                                     <span class="mb-0 h6 fw-bold fs-6">Total Courses</span>
@@ -68,7 +71,8 @@ include 'config.php';
                     </div>
                     <!-- Counter item -->
                     <div class="col-sm-6 col-lg-4">
-                        <div class="d-flex justify-content-center align-items-center p-5 bg-success-subtle bg-opacity-10 rounded-3 card-1">
+                        <div
+                            class="d-flex justify-content-center align-items-center p-5 bg-success-subtle bg-opacity-10 rounded-3 card-1">
                             <div class="ms-4">
                                 <div class="d-flex">
                                     <span class="mb-0 h6 fw-bold fs-6">Activated Courses</span>
@@ -89,7 +93,8 @@ include 'config.php';
                     </div>
                     <!-- Counter item -->
                     <div class="col-sm-6 col-lg-4">
-                        <div class="d-flex justify-content-center align-items-center p-5 bg-warning-subtle bg-opacity-10 rounded-3 card-1">
+                        <div
+                            class="d-flex justify-content-center align-items-center p-5 bg-warning-subtle bg-opacity-10 rounded-3 card-1">
                             <div class="ms-4">
                                 <div class="d-flex">
                                     <span class="mb-0 h6 fw-bold fs-6">Pending Courses</span>
@@ -117,8 +122,11 @@ include 'config.php';
                     <!-- Search bar -->
                     <div class="col-md-8 m-0">
                         <form class="rounded position-relative" method="GET" action="">
-                            <input class="form-control bg-body py-2 fw-bold" type="search" placeholder="Search" aria-label="Search" name="search" />
-                            <button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+                            <input class="form-control bg-body py-2 fw-bold" type="search" placeholder="Search" aria-label="Search"
+                                name="search" />
+                            <button
+                                class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                                type="submit">
                                 <i class="fas fa-search fs-6"></i>
                             </button>
                         </form>
@@ -159,13 +167,14 @@ include 'config.php';
                                                 <th scope="col" class="border-0 bg-dark py-3 text-light fs-6">Type</th>
                                                 <th scope="col" class="border-0 bg-dark py-3 text-light fs-6">price</th>
                                                 <th scope="col" class="border-0 bg-dark py-3 text-light fs-6 text-center">View</th>
-                                                <th scope="col" class="border-0 bg-dark py-3 text-light text-center rounded-end fs-6">Action</th>
+                                                <th scope="col" class="border-0 bg-dark py-3 text-light text-center rounded-end fs-6">Action
+                                                </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             // Include database connection
-                                            include 'config.php';
+                                            include './config/config.php';
 
                                             // Check if the search query is set
                                             $search_query = "";
@@ -190,7 +199,8 @@ include 'config.php';
                                                             <div class="d-flex align-items-center py-3">
                                                                 <!-- Image -->
                                                                 <div class="w-60px">
-                                                                    <img src='<?php echo $row['course_img']; ?>' class="rounded" style="height: 50px; width: 50px;" alt="Course Image">
+                                                                    <img src='<?php echo $row['course_img']; ?>' class="rounded"
+                                                                        style="height: 50px; width: 50px;" alt="Course Image">
                                                                 </div>
                                                                 <!-- Title -->
                                                                 <h6 class="mb-0 ms-3 table-responsive-title fw-bold">
@@ -203,7 +213,8 @@ include 'config.php';
                                                             <div class="d-flex align-items-center py-3">
                                                                 <!-- Image -->
                                                                 <div class="w-60px">
-                                                                    <img src='<?php echo $row['instructor_img']; ?>' class="rounded-circle" style="height: 50px; width: 50px" alt />
+                                                                    <img src='<?php echo $row['instructor_img']; ?>' class="rounded-circle"
+                                                                        style="height: 50px; width: 50px" alt />
                                                                 </div>
                                                                 <!-- Title -->
                                                                 <h6 class="mb-0 ms-3 table-responsive-title fw-bold">
@@ -219,7 +230,9 @@ include 'config.php';
                                                         <td class="fw-bolder"><?php echo $row["course_price"]; ?></td>
                                                         <td>
                                                             <div class="d-flex justify-content-center align-items-center">
-                                                                <a href="course-detail.php?id=<?php echo $row['course_ID'] ?>" class="text-decoration-none btn fw-semibold mx-2 btn-lg" style="background-color: #15739867; color:#103c4e;">Details</a>
+                                                                <a href="course-detail.php?id=<?php echo $row['course_ID'] ?>"
+                                                                    class="text-decoration-none btn fw-semibold mx-2 btn-lg"
+                                                                    style="background-color: #15739867; color:#103c4e;">Details</a>
                                                             </div>
                                                         </td>
                                                         <td>
@@ -228,15 +241,18 @@ include 'config.php';
                                                                 // Show Approve and Reject buttons for pending courses
                                                             ?>
                                                                 <div class="d-flex justify-content-center align-items-center">
-                                                                    <a href="approve.php?id=<?php echo $row['course_ID'] ?>" class="text-decoration-none btn bg-success bg-opacity-10 text-success-emphasis fw-semibold mx-2 btn-lg">Approve</a>
-                                                                    <a href="reject.php?id=<?php echo $row['course_ID'] ?>" class="text-decoration-none btn bg-danger bg-opacity-10 text-danger-emphasis fw-semibold mx-2 btn-lg">Reject</a>
+                                                                    <a href="approve.php?id=<?php echo $row['course_ID'] ?>"
+                                                                        class="text-decoration-none btn bg-success bg-opacity-10 text-success-emphasis fw-semibold mx-2 btn-lg">Approve</a>
+                                                                    <a href="reject.php?id=<?php echo $row['course_ID'] ?>"
+                                                                        class="text-decoration-none btn bg-danger bg-opacity-10 text-danger-emphasis fw-semibold mx-2 btn-lg">Reject</a>
                                                                 </div>
                                                             <?php
                                                             } else {
                                                                 // Show Approved button for approved courses
                                                             ?>
                                                                 <div class="d-flex justify-content-center align-items-center">
-                                                                    <a href="#" class="text-decoration-none btn fw-semibold mx-2 btn-lg" style="background-color: #6e42c142; color:#6f42c1;">Approved</a>
+                                                                    <a href="#" class="text-decoration-none btn fw-semibold mx-2 btn-lg"
+                                                                        style="background-color: #6e42c142; color:#6f42c1;">Approved</a>
                                                                 </div>
                                                             <?php
                                                             }

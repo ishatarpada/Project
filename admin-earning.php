@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include './config/config.php';
 
 ?>
 
@@ -14,7 +14,8 @@ include 'config.php';
   <title>Admin Course Earning</title>
 
   <!-- css bootstrap link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
   <!-- bootstrap icon link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
@@ -78,43 +79,44 @@ include 'config.php';
                         // Output data of each payment
                         while ($row = mysqli_fetch_assoc($result)) {
                       ?>
-                          <tr>
-                            <td>
+                      <tr>
+                        <td>
 
-                              <h6 class="mb-0 ms-3 table-responsive-title fw-bold py-3">
-                                <a href="#" class="text-dark text-decoration-none"><?php echo $row["payment_id"]; ?></a>
-                              </h6>
-                            </td>
-                            <td>
-                              <!-- Title -->
-                              <h6 class="mb-0 ms-3 table-responsive-title fw-bold">
-                                <a href="#" class="text-dark text-decoration-none">
-                                  <?php echo $row["course_name"]; ?>
-                                </a>
-                              </h6>
-                            </td>
+                          <h6 class="mb-0 ms-3 table-responsive-title fw-bold py-3">
+                            <a href="#" class="text-dark text-decoration-none"><?php echo $row["payment_id"]; ?></a>
+                          </h6>
+                        </td>
+                        <td>
+                          <!-- Title -->
+                          <h6 class="mb-0 ms-3 table-responsive-title fw-bold">
+                            <a href="#" class="text-dark text-decoration-none">
+                              <?php echo $row["course_name"]; ?>
+                            </a>
+                          </h6>
+                        </td>
 
-                            <td class="fw-bolder"><?php echo date('Y-m-d', strtotime($row["created_at"])); ?></td>
-                            <td class="fw-bolder">
-                              <p class="d-flex justify-content-start align-items-center my-auto">
-                                <?php
+                        <td class="fw-bolder"><?php echo date('Y-m-d', strtotime($row["created_at"])); ?></td>
+                        <td class="fw-bolder">
+                          <p class="d-flex justify-content-start align-items-center my-auto">
+                            <?php
                                 if ($row["card_used"] == "visa") {
                                   echo '<img src="Assests/visa.svg" class="img-fluid me-2" alt="" style="height:40px; width:40px;">';
                                 } else {
                                   echo '<img src="Assests/other_card.svg" class="img-fluid me-2" alt="" style="height:40px; width:40px;">';
                                 }
                                 ?>
-                              </p>
-                            </td>
-                            <td class="fw-bolder"><?php echo $row["amount"]; ?></td>
-                            <td class="fw-bolder"><?php echo $row["status"]; ?></td>
-                            <td>
-                              <a href="download_receipt.php?id=<?php echo $row['payment_id'] ?>" class="download-link text-light d-flex justify-content-center">
-                                <i class="bi bi-download fs-4 fw-bold bg-danger px-2 rounded-circle text-center"></i>
-                              </a>
-                            </td>
+                          </p>
+                        </td>
+                        <td class="fw-bolder"><?php echo $row["amount"]; ?></td>
+                        <td class="fw-bolder"><?php echo $row["status"]; ?></td>
+                        <td>
+                          <a href="download_receipt.php?id=<?php echo $row['payment_id'] ?>"
+                            class="download-link text-light d-flex justify-content-center">
+                            <i class="bi bi-download fs-4 fw-bold bg-danger px-2 rounded-circle text-center"></i>
+                          </a>
+                        </td>
 
-                          </tr>
+                      </tr>
                       <?php
                         }
                       } else {

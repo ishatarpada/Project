@@ -7,7 +7,8 @@
   <title>Admin Courses Category</title>
 
   <!-- css bootstrap link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
   <!-- bootstrap icon link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
@@ -46,7 +47,7 @@
                   <div class="user-img rounded-circle position-relative m-0 ms-4" style="height: 80px; width: 80px;">
                     <!-- Image Display -->
                     <?php
-                    include 'config.php';
+                    include './config/config.php';
                     $sql = "SELECT * FROM admin";
                     $result = mysqli_query($conn, $sql);
                     if ($result && mysqli_num_rows($result) > 0) {
@@ -73,10 +74,12 @@
                       $contact_information = "Address....";
                     }
                     ?>
-                    <img src="<?php echo $profile_picture; ?>" alt="" class="position-absolute top-0 start-0 rounded-circle border" style="height: 80px; width: 80px;">
+                    <img src="<?php echo $profile_picture; ?>" alt=""
+                      class="position-absolute top-0 start-0 rounded-circle border" style="height: 80px; width: 80px;">
                     <div class="camera-icon position-absolute bottom-0 end-0 px-1 rounded-circle">
                       <input type="file" id="fileInput" style="display: none;" accept="Assets/*" name="user_img">
-                      <label for="fileInput" class="text-decoration-none text-dark bg-dark bg-opacity-10 rounded-circle px-1 py-0">
+                      <label for="fileInput"
+                        class="text-decoration-none text-dark bg-dark bg-opacity-10 rounded-circle px-1 py-0">
                         <i class="bi bi-camera fs-3"></i>
                       </label>
                     </div>
@@ -87,7 +90,8 @@
                 <div class="col-12 p-1">
                   <label class="form-label fw-bolder">Full name</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" name="full_name" value="<?php echo $full_name; ?>" id="full_name">
+                    <input type="text" class="form-control" name="full_name" value="<?php echo $full_name; ?>"
+                      id="full_name">
                   </div>
                 </div>
 
@@ -96,7 +100,8 @@
                   <label class="form-label fw-bolder">Username</label>
                   <div class="input-group">
                     <span class="input-group-text">Eduport.com</span>
-                    <input type="text" class="form-control" name="username" id="username" value="<?php echo $user_name; ?>">
+                    <input type="text" class="form-control" name="username" id="username"
+                      value="<?php echo $user_name; ?>">
                   </div>
                 </div>
 
@@ -128,13 +133,15 @@
                 <!-- Expertise -->
                 <div class="col-12 p-1">
                   <label class="form-label fw-bolder">Expertise</label>
-                  <textarea class="form-control" rows="3" name="expertise" id="expertise"><?php echo $expertise; ?></textarea>
+                  <textarea class="form-control" rows="3" name="expertise"
+                    id="expertise"><?php echo $expertise; ?></textarea>
                 </div>
 
                 <!-- Contact information -->
                 <div class="col-12 p-1">
                   <label class="form-label fw-bolder">Contact information</label>
-                  <textarea class="form-control" rows="3" name="contact_information" id="contact_information"><?php echo $contact_information; ?></textarea>
+                  <textarea class="form-control" rows="3" name="contact_information"
+                    id="contact_information"><?php echo $contact_information; ?></textarea>
                 </div>
 
                 <!-- Save button -->
